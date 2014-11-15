@@ -1,14 +1,8 @@
 <?php
 
-Route::get('/', function()
-{
-	return View::make('programme');
-});
+Route::get('/', 'ProgrammeController@show');
 
-Route::get('/programme', function()
-{
-	return Redirect::to('/');
-});
+Route::get('/programme', function() { return Redirect::to('/'); });
 
 
 Route::get('/manage/events', function()
