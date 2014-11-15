@@ -9,7 +9,14 @@
 
     <div class="row">
         <div class="col-sm-12">
-            Content
+            Content<br />
+            <br />
+			Existing genres:
+			<ul>
+            @foreach ($genres as $genre)
+                <li>{{ $genre->name }}</li>
+            @endforeach
+			<ul>
         </div>
     </div>
 @stop

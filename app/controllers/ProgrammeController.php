@@ -4,7 +4,9 @@ class ProgrammeController extends BaseController {
 
 	public function show()
 	{
-		return View::make('programme');
+	    $genres = Genre::all();
+		
+		return View::make('programme')->with('genres', $genres);
 	}
 
 }
