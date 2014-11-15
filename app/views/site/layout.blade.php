@@ -11,64 +11,39 @@
 
     <!-- CSS
     ================================================== -->
-    <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- MetisMenu CSS -->
+    <!-- Plugins -->
     <link href="css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 
-    <!-- Timeline CSS -->
-    <link href="css/plugins/timeline.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
+    <!-- Custom -->
     <link href="css/sb-admin-2.css" rel="stylesheet">
 
-    <!-- Morris Charts CSS -->
-    <link href="css/plugins/morris.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
     <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-	<!-- Scripts
-    ================================================== -->
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body>
     <div id="wrapper">
         <!-- Navigation -->
-		@include('site.navigation')
+        @include('site.navigation')
 
         <div id="page-wrapper">
-			<!-- Notifications -->
-			@include('site.notifications')
-			
-			<!-- Content -->
-			@yield('content')
+            <!-- Notifications -->
+            @include('site.notifications')
+            
+            <!-- Content -->
+            @yield('content')
         </div>
     </div>
 
-	<!-- Scripts
+    <!-- Scripts
     ================================================== -->
-    <!-- jQuery -->
     <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- Metis Menu Plugin JavaScript -->
+    <!-- Plugins -->
     <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="js/plugins/morris/raphael.min.js"></script>
-    <script src="js/plugins/morris/morris.min.js"></script>
-    <script src="js/plugins/morris/morris-data.js"></script>
-
-    <!-- Custom Theme JavaScript -->
+    <!-- Custom -->
     <script src="js/sb-admin-2.js"></script>
 </body>
 </html>
