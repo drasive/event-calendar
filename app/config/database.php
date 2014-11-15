@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'forge',
-			'username'  => 'forge',
-			'password'  => '',
+			'database'  => 'eventcalendar',
+			'username'  => 'ec-webserver',
+			'password'  => 'YNFKm8y3TjFQSCyDev6F9RF2NkZ8N5Ft',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
