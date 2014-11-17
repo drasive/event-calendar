@@ -45,18 +45,7 @@
     <meta name="msapplication-config" content="images/favicons/browserconfig.xml">
 </head>
 <body>
-    <div id="wrapper">
-        <!-- Navigation -->
-        @include('site.navigation')
-
-        <div id="page-wrapper">
-            <!-- Notifications -->
-            @include('site.notifications')
-            
-            <!-- Content -->
-            @yield('content')
-        </div>
-    </div>
+    @yield('master-content')
 
     <!-- Scripts
     ================================================== -->
