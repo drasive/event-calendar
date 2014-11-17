@@ -1,9 +1,8 @@
-<?php
+<?php namespace EventCalendar;
 
 class Show extends BaseModel {
 
     // Setup
-    protected $table = 'Shows';
     protected $guarded = array('Id', 'Event_Id');
 
 	// Relations

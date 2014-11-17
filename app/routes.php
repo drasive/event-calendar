@@ -1,27 +1,23 @@
 <?php
 
-Route::get('/', 'ProgrammeController@show');
+Route::get('/', 'EventCalendar\ProgrammeController@index');
 
 Route::get('/programme', function() { return Redirect::to('/'); });
 
 
-Route::get('/manage/events', function()
-{
+Route::get('/manage/events', function() {
 	return View::make('manage.events');
 });
 
-Route::get('/manage/price-groups', function()
-{
+Route::get('/manage/price-groups', function() {
 	return View::make('manage.price-groups');
 });
 
-Route::get('/manage/genres', function()
-{
+Route::get('/manage/genres', function() {
 	return View::make('manage.genres');
 });
 
 
-Route::get('/about', function()
-{
+Route::get('/about', function() {
 	return View::make('about');
 });

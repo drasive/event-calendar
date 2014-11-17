@@ -1,9 +1,8 @@
-<?php
+<?php namespace EventCalendar;
 
 class Link extends BaseModel {
 
     // Setup
-    protected $table = 'Links';
     protected $guarded = array('Id', 'Event_Id');
 
 	// Relations

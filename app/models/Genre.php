@@ -1,9 +1,8 @@
-<?php
+<?php namespace EventCalendar;
 
 class Genre extends BaseModel {
 
     // Setup
-    protected $table = 'Genres';
     protected $guarded = array('Id');
 	
 	// Relations
@@ -13,7 +12,7 @@ class Genre extends BaseModel {
 	
 	// Validation
 	public static $rules = array(
-      'Name' => 'required|between:2,50'
+        'Name' => 'required|between:2,50'
     );
 
 }
