@@ -2,22 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="description" content="@yield('description')">
+    <meta name="author" content="Dimitri Vranken">
+    
     <title>@yield('title') - Cultural Institution</title>
-
+    
     <!-- CSS
     ================================================== -->
     <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
     
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
+    
     <!-- Plugins -->
     <link href="//cdnjs.cloudflare.com/ajax/libs/metisMenu/1.1.3/metisMenu.min.css" rel="stylesheet">
-
+    
     <!-- Custom -->
     <link href="css/sb-admin-2.css" rel="stylesheet">
 </head>

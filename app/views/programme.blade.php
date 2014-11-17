@@ -1,8 +1,7 @@
 @extends('site.layout')
 
-@section('title')
-    Programme
-@stop
+@section('title', 'Programme')
+@section('description', 'All upcoming events for the Cultural Institution.')
 
 @section('content')
     <div class="row">
