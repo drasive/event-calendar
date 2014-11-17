@@ -6,12 +6,11 @@ use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
 class User extends BaseModel implements UserInterface, RemindableInterface {
-
+    
     use UserTrait, RemindableTrait;
-
+    
     // Setup
-    protected $table = 'Users';
-    protected $guarded = array('Id', 'Username', 'Password');
+    protected $guarded = array('id', 'email', 'password');
     protected $hidden = array('password', 'remember_token');
-
+    
 }

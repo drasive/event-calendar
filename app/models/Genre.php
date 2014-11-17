@@ -3,7 +3,7 @@
 class Genre extends BaseModel {
 
     // Setup
-    protected $guarded = array('Id');
+    protected $guarded = array('id');
 	
 	// Relations
 	public function event() {

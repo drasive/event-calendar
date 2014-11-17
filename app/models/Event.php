@@ -3,15 +3,15 @@
 class Event extends BaseModel {
 
     // Setup
-    protected $guarded = array('Id');
+    protected $guarded = array('id');
 
 	// Relations
 	public function genre() {
-	    return $this->belongsTo('EventCalendar\Genre', 'Genre_Id');
+	    return $this->belongsTo('EventCalendar\Genre');
     }
 	
 	public function priceGroups() {
-        return $this->belongsToMany('EventCalendar\PriceGroup', 'Event_PriceGroups', 'Event_Id', 'PriceGroup_Id');
+        return $this->belongsToMany('EventCalendar\PriceGroup');
     }
 	
 	public function shows() {
