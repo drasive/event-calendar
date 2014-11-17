@@ -20,7 +20,7 @@
             @endif
             
             @if (count($events) > 0)  
-                <div id="accordion">
+                <div class="accordion">
                     @foreach ($events as $event)
                         @include('event', array('event' => $event))
                     @endforeach
@@ -28,4 +28,8 @@
             @endif
         </div>
     </div>
+@stop
+
+@section('scripts')
+    <script src="js/events.js"></script>
 @stop
