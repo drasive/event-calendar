@@ -22,7 +22,7 @@
             @if (count($events) > 0)  
                 <div class="accordion">
                     @foreach ($events as $event)
-                        @include('event', array('event' => $event))
+                        @include('shared.event', array('event' => $event))
                     @endforeach
                 </div>
             @endif
