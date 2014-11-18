@@ -6,8 +6,8 @@ class Genre extends BaseModel {
     protected $guarded = array('id');
 	
 	// Relations
-	public function event() {
-        return $this->belongsTo('Event');
+	public function events() {
+        return $this->hasMany('EventCalendar\Event');
     }
 	
 	// Validation

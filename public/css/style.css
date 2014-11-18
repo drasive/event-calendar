@@ -5,3 +5,8 @@
 .table tr:hover td .table-control {
     display: inline-block;
 }
+
+
+.form-label-inline {
+    margin-top: 3px;
+}

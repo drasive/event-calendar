@@ -15,10 +15,10 @@
                         <form action="login/authenticate" method="post" role="form">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Email Address" name="email" type="text" autofocus>
+                                    <input name="email" class="form-control" type="text" placeholder="Email Address" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    <input name="password" class="form-control"  type="password" placeholder="Password" value="">
                                 </div>
                                 <div class="checkbox">
                                     <label>
@@ -27,7 +27,7 @@
                                     </label>
                                 </div>
                                 
-                                <button type="submit" id="Send" class="btn btn-lg btn-success btn-block">Login</button>
+                                <button type="submit" id="submit" class="btn btn-lg btn-success btn-block">Login</button>
                             </fieldset>
                         </form>
                     </div>

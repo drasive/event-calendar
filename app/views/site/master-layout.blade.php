@@ -24,7 +24,7 @@
     
     <!-- Custom -->
     <link href="css/theme.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-touch-icon-57x57.png">
@@ -54,11 +54,11 @@
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>  
     
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
+    
     <!-- Plugins -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/metisMenu/1.1.3/metisMenu.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mixitup/1.5.6/jquery.mixitup.min.js"></script>    
-
+    
     <!-- Custom -->
     <script src="js/theme.js"></script>
     
