@@ -23,7 +23,7 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/metisMenu/1.1.3/metisMenu.min.css" rel="stylesheet">
     
     <!-- Custom -->
-    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
     
     <link rel="shortcut icon" href="favicon.ico">
@@ -60,7 +60,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/mixitup/1.5.6/jquery.mixitup.min.js"></script>    
 
     <!-- Custom -->
-    <script src="js/sb-admin-2.js"></script>
+    <script src="js/theme.js"></script>
     
     @yield('scripts')
 </body>
