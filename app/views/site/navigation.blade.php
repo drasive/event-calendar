@@ -36,11 +36,11 @@
                         <li>
                             <a href="manage/events">Events</a>
                         </li>
-                        <li>
-                            <a href="manage/genres">Genres</a>
-                        </li>
 						<li>
                             <a href="manage/price-groups">Price Groups</a>
+                        </li>
+                        <li>
+                            <a href="genres">Genres</a>
                         </li>
                     </ul>
                 </li>

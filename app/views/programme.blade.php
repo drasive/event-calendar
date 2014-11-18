@@ -1,7 +1,7 @@
 @extends('site.default-layout')
 
 @section('title', 'Programme')
-@section('description', 'All upcoming events for the Cultural Institution.')
+@section('description', 'All upcoming events of the Cultural Institution.')
 
 @section('default-content')
     <div class="row">

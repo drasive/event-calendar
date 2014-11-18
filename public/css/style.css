@@ -1,0 +1,7 @@
+.table tr td .table-control {
+    display: none;
+}
+
+.table tr:hover td .table-control {
+    display: inline-block;
+}

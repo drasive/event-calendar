@@ -24,6 +24,7 @@
     
     <!-- Custom -->
     <link href="css/sb-admin-2.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
     
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-touch-icon-57x57.png">

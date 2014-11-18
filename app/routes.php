@@ -15,9 +15,7 @@ Route::get('/manage/price-groups', array('before' => 'auth', function() {
 	return View::make('manage.price-groups');
 }));
 
-Route::get('/manage/genres', array('before' => 'auth', function() {
-	return View::make('manage.genres');
-}));
+Route::get('/genres', array('before' => 'auth', 'uses' => 'EventCalendar\GenreController@index'));
 
 
 Route::get('/about', function() {
