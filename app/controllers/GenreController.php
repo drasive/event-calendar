@@ -1,8 +1,6 @@
 <?php namespace EventCalendar;
 
-use View;
-use Route;
-use Redirect;
+use Route, View;
 
 class GenreController extends BaseController {
     
