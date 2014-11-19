@@ -11,7 +11,7 @@
     </div>
     
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-lg-8">
             @if (count($genres) === 0)
             <p>
                 There are no genres, yet.<br />
@@ -27,19 +27,19 @@
                                     <td id="g{{ $genre->id }}" width="100%">{{{ $genre->name }}}</td>
                                     <td>
                                         <a class="table-control" title="Edit genre &quot;{{{ $genre->name }}}&quot;"
-                                             href="genres/edit/{{ $genre->id }}"  data-toggle="modal" data-target="#editModal">
+                                             href="genres/edit/{{ $genre->id }}" data-toggle="modal" data-target="#editModal">
                                             <span class="fa fa-pencil fa-fw"></span></a>
                                     </td>
                                     <td>
-									    @if (count($genre->events) > 0)
-									        <a class="table-control" title="This genre is associated with {{{ count($genre->events) }}} event(s) and therefore cannot be deleted"
-											  disabled="disabled"  style="color: grey;">
-                                            <span class="fa fa-trash fa-fw"></span></a>
-									    @else
-									        <a class="table-control" title="Delete genre &quot;{{{ $genre->name }}}&quot;"
-										    href="genres/delete/{{ $genre->id }}" data-method="delete">
-                                            <span class="fa fa-trash fa-fw"></span></a>
-									    @endif
+                                        @if (count($genre->events) > 0)
+                                            <a class="table-control" title="This genre is associated with {{{ count($genre->events) }}} event(s) and therefore cannot be deleted"
+                                              disabled="disabled"  style="color: grey;">
+                                              <span class="fa fa-trash fa-fw"></span></a>
+                                        @else
+                                            <a class="table-control" title="Delete genre &quot;{{{ $genre->name }}}&quot;"
+                                              href="genres/delete/{{ $genre->id }}" data-toggle="modal" data-target="#deleteModal">
+                                              <span class="fa fa-trash fa-fw"></span></a>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
@@ -47,18 +47,31 @@
                     </table>
                 </div>
                 
-                <a href="genres/create" class="btn btn-success pull-right">Create Genre<a/>
+                <a class="btn btn-success pull-right"
+                  href="genres/create" data-toggle="modal" data-target="#createModal">
+                  Create Genre</a>
             @endif
         </div>
     </div>
     
+    <div id="createModal" class="modal modal-remote fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content"></div>
+        </div>
+    </div>
     <div id="editModal" class="modal modal-remote fade" tabindex="-1" role="dialog">
         <div class="modal-dialog">
-            <div class="modal-content  form form-horizontal"></div>
+            <div class="modal-content"></div>
+        </div>
+    </div>
+    <div id="deleteModal" class="modal modal-remote fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content"></div>
         </div>
     </div>
 @stop
 
 @section('scripts')
-    <script src="js/remote-modals.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/modals.js"></script>
 @stop

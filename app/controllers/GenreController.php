@@ -7,17 +7,13 @@ use Redirect;
 class GenreController extends BaseController {
     
     public function index() {
-        $genres = Genre::all();
+        $genres = Genre::orderBy('name')->get();
         
         return View::make('genres')->with('genres', $genres);
     }
     
-    public function asd() {
-        // "new"
-        
-        //$id = Route::input('id');
-        //
-        //return View::make('')->with('genres', $genres);
+    public function create() {
+        return View::make('genres.create');
     }
     
     public function edit() {
@@ -27,29 +23,11 @@ class GenreController extends BaseController {
         return View::make('genres.edit')->with('genre', $genre);
     }
     
-    
-    public function create() {
-        //$id = Route::all('id');
-        //
-        //return View::make('')->with('genres', $genres);
-    }
-    
-    public function update() {
-        //$id = Route::input('id');
-        //
-        ////Genre::delete($id);
-        //
-        //return Redirect::to('genres');
-    }
-    
     public function delete() {
-        // TODO: __Ask for confirmation, show success/ error message
         $id = Route::input('id');
-        
         $genre = Genre::find($id);
-        $genre->delete();
         
-        return Redirect::to('genres');
+        return View::make('genres.delete')->with('genre', $genre);
     }
     
 }
