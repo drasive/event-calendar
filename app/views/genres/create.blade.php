@@ -12,7 +12,7 @@
                     </td>
                     <td width="100%">
                         {{ Form::text('name', '', array('class' => 'form-control',
-                          'placeholder' => 'The name of the genre',
+                          'placeholder' => 'The appellation of the genre. E.g.: Concert',
                           'autofocus' => 'autofocus')); }}
                     </td>
                 </tr>

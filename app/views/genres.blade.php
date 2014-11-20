@@ -24,7 +24,7 @@
                         <tbody>
                             @foreach ($genres as $genre)
                                 <tr>
-                                    <td id="g{{ $genre->id }}" width="100%">{{{ $genre->name }}}</td>
+                                    <td width="100%">{{{ $genre->name }}}</td>
                                     <td>
                                         <a class="table-control" title="Edit genre &quot;{{{ $genre->name }}}&quot;"
                                              href="genres/edit/{{ $genre->id }}" data-toggle="modal" data-target="#editModal">
@@ -32,7 +32,7 @@
                                     </td>
                                     <td>
                                         @if (count($genre->events) > 0)
-                                            <a class="table-control" title="This genre is associated with {{{ count($genre->events) }}} event(s) and therefore cannot be deleted"
+                                            <a class="table-control" title="This genre is associated with {{{ count($genre->events) }}} event(s) and therefore can't be deleted"
                                               disabled="disabled"  style="color: grey;">
                                               <span class="fa fa-trash fa-fw"></span></a>
                                         @else

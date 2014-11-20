@@ -15,15 +15,13 @@ class GenreController extends BaseController {
     }
     
     public function edit() {
-        $id = Route::input('id');
-        $genre = Genre::find($id);
+        $genre = Genre::find(Route::input('id'));
         
         return View::make('genres.edit')->with('genre', $genre);
     }
     
     public function delete() {
-        $id = Route::input('id');
-        $genre = Genre::find($id);
+        $genre = Genre::find(Route::input('id'));
         
         return View::make('genres.delete')->with('genre', $genre);
     }

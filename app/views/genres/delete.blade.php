@@ -1,6 +1,6 @@
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    <h4 class="modal-title">Delete Genre "{{{ $genre->name }}}"</h4>
+    <h4 class="modal-title">Delete "{{{ $genre->name }}}"</h4>
 </div>
 <div class="modal-body">
     {{ Form::open(array('id' => 'deleteGenreForm', 'url' => 'api/genres/' . $genre->id, 'method' => 'delete')) }}
@@ -13,6 +13,6 @@
 <div class="modal-footer">
     {{ Form::button('Cancel', array('class' => 'btn btn-default',
       'data-dismiss' => 'modal')); }}
-    {{ Form::submit('Save changes', array('class' => 'btn btn-danger',
+    {{ Form::submit('Delete genre', array('class' => 'btn btn-danger',
       'form' => 'deleteGenreForm')); }}
 </div>

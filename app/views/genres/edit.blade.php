@@ -1,6 +1,6 @@
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    <h4 class="modal-title">Edit Genre "{{{ $genre->name }}}"</h4>
+    <h4 class="modal-title">Edit "{{{ $genre->name }}}"</h4>
 </div>
 <div class="modal-body">
     {{ Form::open(array('id' => 'editGenreForm', 'url' => 'api/genres/' . $genre->id, 'method' => 'post')) }}
@@ -12,7 +12,7 @@
                     </td>
                     <td width="100%">
                         {{ Form::text('name', $genre->name, array('class' => 'form-control',
-                          'placeholder' => 'The name of the genre',
+                          'placeholder' => 'The appellation of the genre. E.g.: Concert',
                           'autofocus' => 'autofocus')); }}
                     </td>
                 </tr>

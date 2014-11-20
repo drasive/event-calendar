@@ -11,6 +11,7 @@ class Genre extends BaseModel {
     }
     
     // Validation
+    // TODO: Implement
     public static $rules = array(
         'name' => 'required|between:2,50'
     );

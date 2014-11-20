@@ -9,8 +9,7 @@ class ApiGenreController extends BaseController {
     public function create() {
         $genre = new Genre();
         
-        $name = Input::get('name');
-        $genre->name = $name;
+        $genre->name = Input::get('name');
         $genre->save();
         
         return Redirect::to('genres')->with(array('title' => 'Genre created',
@@ -18,11 +17,9 @@ class ApiGenreController extends BaseController {
     }
     
     public function update() {
-        $id = Route::input('id');
-        $genre = Genre::find($id);
+        $genre = Genre::find(Route::input('id'));
         
-        $name = Input::get('name');
-        $genre->name = $name;
+        $genre->name = Input::get('name');
         $genre->save();
         
         return Redirect::to('genres')->with(array('title' => 'Genre updated',
@@ -30,8 +27,7 @@ class ApiGenreController extends BaseController {
     }
     
     public function delete() {
-        $id = Route::input('id');
-        $genre = Genre::find($id);
+        $genre = Genre::find(Route::input('id'));
         
         $genre->delete();
         
