@@ -14,7 +14,7 @@
         <div class="col-lg-8">
             @if (count($priceGroups) === 0)
             <p>
-                There are no price groups, yet.<br />
+                There are no price groups yet.<br />
                 <br />
                 <a href="price-groups/create" class="btn btn-success">Create Price Group<a/>
             </p>

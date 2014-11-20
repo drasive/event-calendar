@@ -14,7 +14,7 @@
         <div class="col-sm-12">
             @if (count($events) === 0)
             <p>                
-                There currently are no upcoming events.<br />
+                There are no upcoming events at this time.<br />
                 You can take a look at the past events in the <a href="archive">archive</a>.                              
             </p>
             @endif

@@ -1,45 +1,41 @@
 @extends('site.default-layout')
 
-@section('title', 'Manage Genres')
-@section('description', 'Manage the event genres for the Cultural Institution.')
+@section('title', 'Manage Events')
+@section('description', 'Manage the events for the Cultural Institution.')
 
 @section('default-content')
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Manage Genres</h1>
+            <h1 class="page-header">Manage Events</h1>
         </div>
     </div>
     
     <div class="row">
         <div class="col-lg-8">
-            @if (count($genres) === 0)
+            @if (count($events) === 0)
             <p>
-                There are no genres yet.<br />
+                There are no events yet.<br />
                 <br />
-                <a href="genres/create" class="btn btn-success">Create Genre<a/>
+                <a href="events/create" class="btn btn-success">Create Event<a/>
             </p>
             @else
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <tbody>
-                            @foreach ($genres as $genre)
+                            @foreach ($events as $event)
                                 <tr>
-                                    <td width="100%">{{{ $genre->name }}}</td>
+                                    <td width="65%">{{{ $event->name }}}</td>
+									<td width="15%">{{{ $event->duration }}}</td>
+									<td width="20%">{{{ count($event->shows) }}} show(s)</td>
                                     <td>
-                                        <a title="Edit genre &quot;{{{ $genre->name }}}&quot;"
-                                             href="genres/edit/{{ $genre->id }}" data-toggle="modal" data-target="#editModal">
+                                        <a title="Edit event &quot;{{{ $event->name }}}&quot;"
+                                             href="events/edit/{{ $event->id }}" data-toggle="modal" data-target="#editModal">
                                             <span class="fa fa-pencil fa-fw"></span></a>
                                     </td>
                                     <td>
-                                        @if (count($genre->events) > 0)
-                                            <a title="This genre is associated with {{{ count($genre->events) }}} event(s) and therefore can't be deleted"
-                                              disabled="disabled"  style="color: grey;">
-                                              <span class="fa fa-trash fa-fw"></span></a>
-                                        @else
-                                            <a title="Delete genre &quot;{{{ $genre->name }}}&quot;"
-                                              href="genres/delete/{{ $genre->id }}" data-toggle="modal" data-target="#deleteModal">
-                                              <span class="fa fa-trash fa-fw"></span></a>
-                                        @endif
+                                        <a title="Delete event &quot;{{{ $event->name }}}&quot;"
+                                          href="events/delete/{{ $event->id }}" data-toggle="modal" data-target="#deleteModal">
+                                          <span class="fa fa-trash fa-fw"></span></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -48,8 +44,8 @@
                 </div>
                 
                 <a class="btn btn-success pull-right"
-                  href="genres/create" data-toggle="modal" data-target="#createModal">
-                  Create Genre</a>
+                  href="events/create" data-toggle="modal" data-target="#createModal">
+                  Create Event</a>
             @endif
         </div>
     </div>

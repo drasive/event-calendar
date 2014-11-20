@@ -9,10 +9,16 @@ Route::get('/programme', function() { return Redirect::to('/'); });
 Route::get('/login', 'EventCalendar\LoginController@index');
 Route::post('login/authenticate', 'EventCalendar\LoginController@authenticate');
 
-
-Route::get('/manage/events', array('before' => 'auth', function() {
-    return View::make('manage.events');
-}));
+Route::group(array('before' => 'auth'), function() {
+    Route::get('/events',             'EventCalendar\EventController@index');
+    Route::get('/events/create',      'EventCalendar\EventController@create');    
+    Route::get('/events/edit/{id}',   'EventCalendar\EventController@edit');
+    Route::get('/events/delete/{id}', 'EventCalendar\EventController@delete');
+    
+    Route::put(   'api/events',      'EventCalendar\ApiEventController@create');
+    Route::post(  'api/events/{id}', 'EventCalendar\ApiEventController@update');
+    Route::delete('api/events/{id}', 'EventCalendar\ApiEventController@delete');
+});
 
 Route::group(array('before' => 'auth'), function() {
     Route::get('/price-groups',             'EventCalendar\PriceGroupController@index');

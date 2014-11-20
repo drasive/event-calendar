@@ -4,8 +4,6 @@ use Route, Input, Redirect;
 
 class ApiPriceGroupController extends BaseController {
     
-    // TODO: Find a way to move the redirects out of this controller
-    
     public function create() {
         $priceGroup = new PriceGroup();
         
