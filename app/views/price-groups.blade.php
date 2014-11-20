@@ -27,17 +27,17 @@
                                     <td width="70%">{{{ $priceGroup->name }}}</td>
 									<td width="15%">{{{ $priceGroup->price }}}</td>
                                     <td>
-                                        <a class="table-control" title="Edit price group &quot;{{{ $priceGroup->name }}}&quot;"
+                                        <a title="Edit price group &quot;{{{ $priceGroup->name }}}&quot;"
                                           href="price-groups/edit/{{ $priceGroup->id }}" data-toggle="modal" data-target="#editModal">
                                             <span class="fa fa-pencil fa-fw"></span></a>
                                     </td>
                                     <td>
                                         @if (count($priceGroup->events) > 0)
-                                            <a class="table-control" title="This price group is associated with {{{ count($priceGroup->events) }}} event(s) and therefore can't be deleted"
+                                            <a title="This price group is associated with {{{ count($priceGroup->events) }}} event(s) and therefore can't be deleted"
                                               disabled="disabled"  style="color: grey;">
                                               <span class="fa fa-trash fa-fw"></span></a>
                                         @else
-                                            <a class="table-control" title="Delete price group &quot;{{{ $priceGroup->name }}}&quot;"
+                                            <a title="Delete price group &quot;{{{ $priceGroup->name }}}&quot;"
                                               href="price-groups/delete/{{ $priceGroup->id }}" data-toggle="modal" data-target="#deleteModal">
                                               <span class="fa fa-trash fa-fw"></span></a>
                                         @endif

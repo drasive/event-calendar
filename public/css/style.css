@@ -1,12 +1,3 @@
-.table tr td .table-control {
-    display: none;
-}
-
-.table tr:hover td .table-control {
-    display: inline-block;
-}
-
-
 .form-label-inline {
     margin-top: 3px;
 	margin-right: 12px;

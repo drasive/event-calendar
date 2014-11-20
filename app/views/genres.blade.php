@@ -26,17 +26,17 @@
                                 <tr>
                                     <td width="100%">{{{ $genre->name }}}</td>
                                     <td>
-                                        <a class="table-control" title="Edit genre &quot;{{{ $genre->name }}}&quot;"
+                                        <a title="Edit genre &quot;{{{ $genre->name }}}&quot;"
                                              href="genres/edit/{{ $genre->id }}" data-toggle="modal" data-target="#editModal">
                                             <span class="fa fa-pencil fa-fw"></span></a>
                                     </td>
                                     <td>
                                         @if (count($genre->events) > 0)
-                                            <a class="table-control" title="This genre is associated with {{{ count($genre->events) }}} event(s) and therefore can't be deleted"
+                                            <a title="This genre is associated with {{{ count($genre->events) }}} event(s) and therefore can't be deleted"
                                               disabled="disabled"  style="color: grey;">
                                               <span class="fa fa-trash fa-fw"></span></a>
                                         @else
-                                            <a class="table-control" title="Delete genre &quot;{{{ $genre->name }}}&quot;"
+                                            <a title="Delete genre &quot;{{{ $genre->name }}}&quot;"
                                               href="genres/delete/{{ $genre->id }}" data-toggle="modal" data-target="#deleteModal">
                                               <span class="fa fa-trash fa-fw"></span></a>
                                         @endif
