@@ -34,10 +34,10 @@
                     <a href="#"><i class="fa fa-gear fa-fw"></i> Management<span class="fa arrow" style="margin-top: 3px;"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="manage/events">Events</a>
+                            <a href="events">Events</a>
                         </li>
 						<li>
-                            <a href="manage/price-groups">Price Groups</a>
+                            <a href="price-groups">Price Groups</a>
                         </li>
                         <li>
                             <a href="genres">Genres</a>
