@@ -4,7 +4,7 @@
 </div>
 <div class="modal-body">
     {{ Form::open(array('id' => 'createGenreForm', 'url' => 'api/genres', 'method' => 'put')) }}
-        <table>
+        <table class="management">
             <tbody>
                 <tr>
                     <td>
@@ -12,7 +12,7 @@
                     </td>
                     <td width="100%">
                         {{ Form::text('name', '', array('class' => 'form-control',
-                          'placeholder' => 'The appellation of the genre. E.g.: Concert',
+                          'placeholder' => 'The appellation of this genre. E.g.: Concert',
                           'autofocus' => 'autofocus')); }}
                     </td>
                 </tr>

@@ -12,19 +12,22 @@ class EventController extends BaseController {
     }
     
     public function create() {
-        return View::make('events.create');
+        $genreList = Genre::lists('name', 'id');
+        
+        return View::make('events.create', array('genreList' => $genreList));
     }
     
     public function edit() {
         $event = Event::find(Route::input('id'));
+        $genreList = Genre::lists('name', 'id');
         
-        return View::make('events.edit')->with('event', $event);
+        return View::make('events.edit', array('event' => $event, 'genreList' => $genreList));
     }
     
     public function delete() {
         $event = Event::find(Route::input('id'));
         
-        return View::make('events.delete')->with('event', $event);
+        return View::make('events.delete', array('event' => $event));
     }
     
 }

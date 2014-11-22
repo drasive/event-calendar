@@ -1,3 +1,11 @@
+.management td {
+    padding-bottom: 8px;
+}
+
+.management textarea {
+    height: 100px;
+}
+
 .form-label-inline {
     margin-top: 3px;
 	margin-right: 12px;

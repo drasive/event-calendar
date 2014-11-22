@@ -3,8 +3,8 @@
     <h4 class="modal-title">Create Event</h4>
 </div>
 <div class="modal-body">
-    {{ Form::open(array('id' => 'createEventForm', 'url' => 'api/events', 'method' => 'put')) }}
-        <table>
+    {{ Form::open(array('id' => 'createEventForm', 'url' => 'api/events', 'method' => 'put', 'files' => true)) }}
+        <table class="management">
             <tbody>
                 <tr>
                     <td>
@@ -12,48 +12,55 @@
                     </td>
                     <td width="100%">
                         {{ Form::text('name', '', array('class' => 'form-control',
-                          'placeholder' => 'The appellation of the genre. E.g.: Concert',
+                          'placeholder' => 'The appellation of this event. E.g.: Christmas concert',
                           'autofocus' => 'autofocus')); }}
                     </td>
                 </tr>
-				<tr>
+                <tr>
+                    <td>
+                        {{ Form::label('genre', 'Genre:', array('class' => 'form-label-inline')); }}
+                    </td>
+                    <td width="100%">
+                        {{ Form::select('genre', $genreList, null, array('class' => 'form-control')); }}
+                    </td>
+                </tr>
+                <tr>
                     <td colspan="2">
                         {{ Form::label('description', 'Description:'); }}
-						{{ Form::text('description', '', array('class' => 'form-control',
-                          'placeholder' => 'The appellation of the genre. E.g.: Concert',
-                          'autofocus' => 'autofocus')); }}
+                        {{ Form::textarea('description', '', array('class' => 'form-control',
+                          'placeholder' => 'The description of this event.')); }}
                     </td>
                 </tr>
-				<tr>
+                <tr>
                     <td>
                         {{ Form::label('duration', 'Duration:', array('class' => 'form-label-inline')); }}
                     </td>
                     <td width="100%">
                         {{ Form::text('duration', '', array('class' => 'form-control',
-                          'placeholder' => 'The total duration of this event. E.g.: Concert')); }}
+                          'placeholder' => 'The total duration of this event. E.g.: 02:30 (2 hours and 30 minutes)')); }}
                     </td>
                 </tr>
-				<tr>
+                <tr>
                     <td colspan="2">
                         {{ Form::label('cast', 'Cast:'); }}
-						{{ Form::text('cast', '', array('class' => 'form-control',
-                          'placeholder' => 'The appellation of the genre. E.g.: Concert')); }}
+                        {{ Form::textarea('cast', '', array('class' => 'form-control',
+                          'placeholder' => 'The cast for this event.')); }}
                     </td>
                 </tr>
-				<tr>
+                <tr>
                     <td>
                         {{ Form::label('image', 'Image:', array('class' => 'form-label-inline')); }}
                     </td>
                     <td width="100%">
-                        {{ Form::text('image', '', array('class' => 'form-control',
-                          'placeholder' => 'The total duration of this event. E.g.: Concert')); }}
+                        {{ Form::file('image', array('class' => 'form-control',
+                          'placeholder' => 'The image for this event.')); }}
                     </td>
                 </tr>
-				<tr>
+                <tr>
                     <td colspan="2">
                         {{ Form::label('image-description', 'Image description:'); }}
-						{{ Form::text('image-description', '', array('class' => 'form-control',
-                          'placeholder' => 'The appellation of the genre. E.g.: Concert')); }}
+                        {{ Form::textarea('image-description', '', array('class' => 'form-control',
+                          'placeholder' => 'The description of the selected image.')); }}
                     </td>
                 </tr>
             </tbody>

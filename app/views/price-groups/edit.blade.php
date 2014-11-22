@@ -4,7 +4,7 @@
 </div>
 <div class="modal-body">
     {{ Form::open(array('id' => 'editPriceGroupForm', 'url' => 'api/price-groups/' . $priceGroup->id, 'method' => 'post')) }}
-        <table>
+        <table class="management">
             <tbody>
                 <tr>
                     <td>
@@ -12,16 +12,16 @@
                     </td>
                     <td width="100%">
                         {{ Form::text('name', $priceGroup->name, array('class' => 'form-control',
-                          'placeholder' => 'The people that belong in this price group. E.g.: Children.')); }}
+                          'placeholder' => 'The type of people that belong in this price group. E.g.: Children.')); }}
                     </td>
                 </tr>
-				<tr>
+                <tr>
                     <td>
                         {{ Form::label('price', 'Price:', array('class' => 'form-label-inline')); }}
                     </td>
                     <td width="100%">
                         {{ Form::text('price', $priceGroup->price, array('class' => 'form-control',
-                          'placeholder' => 'The price for this group of people. E.g.: 19.90',
+                          'placeholder' => 'The admission charge for this group of people. E.g.: 19.90',
                           'autofocus' => 'autofocus')); }}
                     </td>
                 </tr>

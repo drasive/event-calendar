@@ -10,10 +10,12 @@ class ApiEventController extends BaseController {
         $event = new Event();
         
         $event->name = Input::get('name');
+        $event->genre_id = Input::get('genre');
         $event->description = Input::get('description');
         $event->duration = Input::get('duration');
         $event->cast = Input::get('cast');
-        $event->image_path = ''; // TODO:
+        // TODO: image
+        $event->image_path = Input::get('image');
         $event->image_description = Input::get('image-description');
         $event->save();
         
@@ -25,10 +27,12 @@ class ApiEventController extends BaseController {
         $event = Event::find(Route::input('id'));
         
         $event->name = Input::get('name');
+        $event->genre_id = Input::get('genre');
         $event->description = Input::get('description');
         $event->duration = Input::get('duration');
         $event->cast = Input::get('cast');
-        $event->image_path = ''; // TODO:
+        // TODO: image
+        $event->image_path = Input::get('image');
         $event->image_description = Input::get('image-description');
         $event->save();
         
