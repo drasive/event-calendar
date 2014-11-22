@@ -16,7 +16,9 @@
             <p>
                 There are no genres yet.<br />
                 <br />
-                <a href="genres/create" class="btn btn-success">Create Genre<a/>
+				<a class="btn btn-success" data-backdrop="static"
+                  href="genres/create" data-toggle="modal" data-target="#createModal">
+                  Create Genre</a>
             </p>
             @else
                 <div class="table-responsive">
@@ -26,7 +28,7 @@
                                 <tr>
                                     <td width="100%">{{{ $genre->name }}}</td>
                                     <td>
-                                        <a title="Edit genre &quot;{{{ $genre->name }}}&quot;"
+                                        <a title="Edit genre &quot;{{{ $genre->name }}}&quot;" data-backdrop="static"
                                              href="genres/edit/{{ $genre->id }}" data-toggle="modal" data-target="#editModal">
                                             <span class="fa fa-pencil fa-fw"></span></a>
                                     </td>
@@ -36,7 +38,7 @@
                                               disabled="disabled"  style="color: grey;">
                                               <span class="fa fa-trash fa-fw"></span></a>
                                         @else
-                                            <a title="Delete genre &quot;{{{ $genre->name }}}&quot;"
+                                            <a title="Delete genre &quot;{{{ $genre->name }}}&quot;" data-backdrop="static"
                                               href="genres/delete/{{ $genre->id }}" data-toggle="modal" data-target="#deleteModal">
                                               <span class="fa fa-trash fa-fw"></span></a>
                                         @endif
@@ -47,7 +49,7 @@
                     </table>
                 </div>
                 
-                <a class="btn btn-success pull-right"
+                <a class="btn btn-success pull-right" data-backdrop="static"
                   href="genres/create" data-toggle="modal" data-target="#createModal">
                   Create Genre</a>
             @endif

@@ -16,7 +16,9 @@
             <p>
                 There are no price groups yet.<br />
                 <br />
-                <a href="price-groups/create" class="btn btn-success">Create Price Group<a/>
+				<a class="btn btn-success" data-backdrop="static"
+                  href="price-groups/create" data-toggle="modal" data-target="#createModal">
+                  Create Price Group</a>
             </p>
             @else
                 <div class="table-responsive">
@@ -27,7 +29,7 @@
                                     <td width="70%">{{{ $priceGroup->name }}}</td>
 									<td width="15%">{{{ $priceGroup->price }}}</td>
                                     <td>
-                                        <a title="Edit price group &quot;{{{ $priceGroup->name }}}&quot;"
+                                        <a title="Edit price group &quot;{{{ $priceGroup->name }}}&quot;" data-backdrop="static"
                                           href="price-groups/edit/{{ $priceGroup->id }}" data-toggle="modal" data-target="#editModal">
                                             <span class="fa fa-pencil fa-fw"></span></a>
                                     </td>
@@ -37,7 +39,7 @@
                                               disabled="disabled"  style="color: grey;">
                                               <span class="fa fa-trash fa-fw"></span></a>
                                         @else
-                                            <a title="Delete price group &quot;{{{ $priceGroup->name }}}&quot;"
+                                            <a title="Delete price group &quot;{{{ $priceGroup->name }}}&quot;" data-backdrop="static"
                                               href="price-groups/delete/{{ $priceGroup->id }}" data-toggle="modal" data-target="#deleteModal">
                                               <span class="fa fa-trash fa-fw"></span></a>
                                         @endif
@@ -48,7 +50,7 @@
                     </table>
                 </div>
                 
-                <a class="btn btn-success pull-right"
+                <a class="btn btn-success pull-right" data-backdrop="static"
                   href="price-groups/create" data-toggle="modal" data-target="#createModal">
                   Create Price Group</a>
             @endif

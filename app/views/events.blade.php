@@ -16,7 +16,9 @@
             <p>
                 There are no events yet.<br />
                 <br />
-                <a href="events/create" class="btn btn-success">Create Event<a/>
+				<a class="btn btn-success" data-backdrop="static"
+                  href="events/create" data-toggle="modal" data-target="#createModal">
+                  Create Event</a>
             </p>
             @else
                 <div class="table-responsive">
@@ -28,12 +30,12 @@
 									<td width="15%">{{{ $event->duration }}}</td>
 									<td width="20%">{{{ count($event->shows) }}} show(s)</td>
                                     <td>
-                                        <a title="Edit event &quot;{{{ $event->name }}}&quot;"
+                                        <a title="Edit event &quot;{{{ $event->name }}}&quot;" data-backdrop="static"
                                              href="events/edit/{{ $event->id }}" data-toggle="modal" data-target="#editModal">
                                             <span class="fa fa-pencil fa-fw"></span></a>
                                     </td>
                                     <td>
-                                        <a title="Delete event &quot;{{{ $event->name }}}&quot;"
+                                        <a title="Delete event &quot;{{{ $event->name }}}&quot;" data-backdrop="static"
                                           href="events/delete/{{ $event->id }}" data-toggle="modal" data-target="#deleteModal">
                                           <span class="fa fa-trash fa-fw"></span></a>
                                     </td>
@@ -42,8 +44,8 @@
                         </tbody>
                     </table>
                 </div>
-                
-                <a class="btn btn-success pull-right"
+                 
+                <a class="btn btn-success pull-right" data-backdrop="static"
                   href="events/create" data-toggle="modal" data-target="#createModal">
                   Create Event</a>
             @endif
