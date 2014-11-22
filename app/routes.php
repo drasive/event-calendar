@@ -42,6 +42,4 @@ Route::group(array('before' => 'auth'), function() {
     Route::delete('api/genres/{id}', 'EventCalendar\ApiGenreController@delete');
 });
 
-Route::get('/about', function() {
-    return View::make('about');
-});
+Route::get('/about', 'EventCalendar\AboutController@index');
