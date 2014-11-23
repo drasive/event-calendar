@@ -27,8 +27,8 @@
                             @foreach ($events as $event)
                                 <tr>
                                     <td width="65%">{{{ $event->name }}}</td>
-									<td width="15%">{{{ $event->duration }}}</td>
-									<td width="20%">{{{ count($event->shows) }}} show(s)</td>
+									<td width="15%" class="right-align">{{{ $event->duration }}}</td>
+									<td width="20%" class="right-align">{{{ count($event->shows) }}} show(s)</td>
                                     <td>
                                         <a title="Edit event &quot;{{{ $event->name }}}&quot;" data-backdrop="static"
                                              href="events/edit/{{ $event->id }}" data-toggle="modal" data-target="#editModal">
