@@ -26,8 +26,14 @@
                         <tbody>
                             @foreach ($events as $event)
                                 <tr>
-                                    <td width="65%">{{{ $event->name }}}</td>
-									<td width="15%" class="right-align">{{{ $event->duration }}}</td>
+                                    <td width="55%">{{{ $event->name }}}</td>
+									<td width="25%" class="right-align">
+									    @if (count($event->shows) > 0)
+									        {{{ $event->firstShow()->date }}}
+									    @else
+									        -
+									    @endif
+									</td>
 									<td width="20%" class="right-align">{{{ count($event->shows) }}} show(s)</td>
                                     <td>
                                         <a title="Edit event &quot;{{{ $event->name }}}&quot;" data-backdrop="static"

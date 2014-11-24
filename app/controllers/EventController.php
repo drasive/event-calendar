@@ -5,8 +5,15 @@ use Route, View;
 class EventController extends BaseController {
     
     public function index() {
-        // TODO: Order by date
         $events = Event::orderBy('name')->get();
+        
+        $events = $events->sortByDesc(function ($event) {
+            if ($event->firstShow() === null) {
+                return 999999999999;
+            }
+                      
+            return strtotime($event->firstShow()->date . ' ' . $event->firstShow()->time);
+        });
         
         return View::make('events')->with('events', $events);
     }
