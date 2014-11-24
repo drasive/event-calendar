@@ -9,7 +9,7 @@
             <h1 class="page-header">Programme</h1>
         </div>
     </div>
-
+    
     <div class="row">
         <div class="col-sm-12">
             @if (count($events) === 0)
@@ -26,6 +26,10 @@
                     @endforeach
                 </div>
             @endif
+            
+            <div class="text-center">
+               {{ $paginator->links(); }}
+            </div>
         </div>
     </div>
 @stop

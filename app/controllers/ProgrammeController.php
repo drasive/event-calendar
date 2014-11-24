@@ -1,6 +1,6 @@
 <?php namespace EventCalendar;
 
-use View;
+use View, Input, Paginator;
 
 class ProgrammeController extends BaseController {
     
@@ -28,9 +28,13 @@ class ProgrammeController extends BaseController {
         });
         
         // TODO: Genre filter
-        // TODO: Paging
         
-        return View::make('programme', array('events' => $upcommingEvents));
+        $eventsPerPage = 10;
+        $currentPage = is_null(Input::get('page')) ? 0 : Input::get('page');
+        $eventsOnPage = $upcommingEvents->slice(($currentPage - 1) * $eventsPerPage, $eventsPerPage);
+        $paginator = Paginator::make($eventsOnPage->all(), count($upcommingEvents), $eventsPerPage);
+        
+        return View::make('programme', array('events' => $eventsOnPage, 'paginator' => $paginator));
     }
     
 }

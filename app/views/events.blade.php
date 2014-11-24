@@ -37,7 +37,7 @@
 									<td width="20%" class="right-align">{{{ count($event->shows) }}} show(s)</td>
                                     <td>
                                         <a title="Edit event &quot;{{{ $event->name }}}&quot;" data-backdrop="static"
-                                             href="events/edit/{{ $event->id }}" data-toggle="modal" data-target="#editModal">
+                                          href="events/edit/{{ $event->id }}" data-toggle="modal" data-target="#editModal">
                                             <span class="fa fa-pencil fa-fw"></span></a>
                                     </td>
                                     <td>
@@ -50,7 +50,7 @@
                         </tbody>
                     </table>
                 </div>
-                 
+                
                 <a class="btn btn-success pull-right" data-backdrop="static"
                   href="events/create" data-toggle="modal" data-target="#createModal">
                   Create Event</a>
