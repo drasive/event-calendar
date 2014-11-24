@@ -34,8 +34,8 @@ INSERT INTO `eventcalendar`.`links` (`id`, `event_id`, `url`, `Name`, `created_a
 # shows
 INSERT INTO `eventcalendar`.`shows` (`id`, `event_id`, `date`, `time`, `created_at`) VALUES ('1', '1', '2014-12-22', '23:00:00', '2014-11-16 20:00');
 INSERT INTO `eventcalendar`.`shows` (`id`, `event_id`, `date`, `time`, `created_at`) VALUES ('2', '1', '2014-12-23', '00:00:00', '2014-11-16 20:00');
-INSERT INTO `eventcalendar`.`shows` (`id`, `event_id`, `date`, `time`, `created_at`) VALUES ('3', '2', '2015-03-20', '19:30:00', '2014-11-16 20:00');
-INSERT INTO `eventcalendar`.`shows` (`id`, `event_id`, `date`, `time`, `created_at`) VALUES ('4', '2', '2015-03-20', '20:15:00', '2014-11-16 20:00');
+INSERT INTO `eventcalendar`.`shows` (`id`, `event_id`, `date`, `time`, `created_at`) VALUES ('3', '2', '2013-03-20', '19:30:00', '2014-11-16 20:00');
+INSERT INTO `eventcalendar`.`shows` (`id`, `event_id`, `date`, `time`, `created_at`) VALUES ('4', '2', '2013-03-20', '20:15:00', '2014-11-16 20:00');
 INSERT INTO `eventcalendar`.`shows` (`id`, `event_id`, `date`, `time`, `created_at`) VALUES ('5', '3', '2015-04-05', '19:30:00', '2014-11-16 20:00');
 
 # users
