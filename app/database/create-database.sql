@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `eventcalendar`.`events` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `genre_id` INT UNSIGNED NOT NULL,
   `name` VARCHAR(150) NOT NULL,
-  `description` TEXT NOT NULL,
+  `description` VARCHAR(500) NOT NULL,
   `duration` TIME NOT NULL,
   `cast` VARCHAR(500) NULL,
   `image_path` VARCHAR(260) NULL,

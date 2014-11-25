@@ -12,7 +12,7 @@ class Genre extends BaseModel {
         return $this->hasMany('EventCalendar\Event');
     }
     
-    // Validation
+    // Methods
     public function getValidator() {
         return Validator::make(
             array(
