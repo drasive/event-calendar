@@ -12,7 +12,8 @@
                     </td>
                     <td width="100%">
                         {{ Form::text('name', '', array('class' => 'form-control',
-                          'placeholder' => 'The type of people that belong in this price group. E.g.: Children.')); }}
+                          'placeholder' => 'The type of people that belong in this price group. E.g.: Children.',
+                          'required' => 'required', 'pattern' => '.{2,35}', 'title' => '2 to 35 characters')); }}
                     </td>
                 </tr>
                 <tr>
@@ -20,6 +21,7 @@
                         {{ Form::label('price', 'Price:', array('class' => 'form-label-inline')); }}
                     </td>
                     <td width="100%">
+                        // TODO: __Change to type="number", add client side validation
                         {{ Form::text('price', '', array('class' => 'form-control',
                           'placeholder' => 'The admission charge for this group of people. E.g.: 19.90',
                           'autofocus' => 'autofocus')); }}

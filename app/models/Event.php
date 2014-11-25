@@ -26,7 +26,6 @@ class Event extends BaseModel {
     
     // Methods
     public function getValidator() {
-        // date('h:i', strtotime($this->duration))
         return Validator::make(
             array(
                 'name' => $this->name,
