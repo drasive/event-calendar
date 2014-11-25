@@ -13,6 +13,7 @@
                     <td width="100%">
                         {{ Form::text('name', $event->name, array('class' => 'form-control',
                           'placeholder' => 'The appellation of this event. E.g.: Christmas concert',
+                          'required' => 'required', 'pattern' => '.{2,150}', 'title' => '2 to 150 characters',
                           'autofocus' => 'autofocus')); }}
                     </td>
                 </tr>
@@ -28,7 +29,8 @@
                     <td colspan="2">
                         {{ Form::label('description', 'Description:'); }}
                         {{ Form::textarea('description', $event->description, array('class' => 'form-control',
-                          'placeholder' => 'The description of this event.')); }}
+                          'placeholder' => 'The description of this event.',
+                          'required' => 'required', 'pattern' => '.{12,500}', 'title' => '12 to 500 characters')); }}
                     </td>
                 </tr>
                 <tr>
@@ -36,15 +38,17 @@
                         {{ Form::label('duration', 'Duration:', array('class' => 'form-label-inline')); }}
                     </td>
                     <td width="100%">
-                        {{ Form::text('duration', $event->duration, array('class' => 'form-control',
-                          'placeholder' => 'The total duration of this event. E.g.: 02:30 (2 hours and 30 minutes)')); }}
+                        {{ Form::input('time', 'duration', $event->duration, array('class' => 'form-control',
+                          'placeholder' => 'The duration of each show of this event. E.g.: 02:30 (2 hours and 30 minutes)',
+                          'required' => 'required', 'title' => '00:00 to 23:59')); }}
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
                         {{ Form::label('cast', 'Cast:'); }}
                         {{ Form::textarea('cast', $event->cast, array('class' => 'form-control',
-                          'placeholder' => 'The cast for this event.')); }}
+                          'placeholder' => 'The cast for this event.',
+                          'pattern' => '.{0,500}', 'title' => 'Maximum 500 characters')); }}
                     </td>
                 </tr>
                 <tr>
@@ -60,7 +64,8 @@
                     <td colspan="2">
                         {{ Form::label('image-description', 'Image description:'); }}
                         {{ Form::textarea('image-description', $event->image_description, array('class' => 'form-control',
-                          'placeholder' => 'The description of the selected image.')); }}
+                          'placeholder' => 'The description of the selected image.',
+                          'pattern' => '.{0,250}', 'title' => 'Maximum 250 characters')); }}
                     </td>
                 </tr>
             </tbody>
