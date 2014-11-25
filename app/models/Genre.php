@@ -1,5 +1,7 @@
 <?php namespace EventCalendar;
 
+use Validator;
+
 class Genre extends BaseModel {
     
     // Setup
@@ -11,9 +13,15 @@ class Genre extends BaseModel {
     }
     
     // Validation
-    // TODO: Implement
-    public static $rules = array(
-        'name' => 'required|between:2,50'
-    );
+    public function getValidator() {
+        return Validator::make(
+            array(
+                'name' => $this->name
+            ),
+            array(
+                'name' => 'required|between:2,50'
+            )
+        );
+    }
     
 }
