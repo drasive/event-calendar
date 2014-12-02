@@ -21,7 +21,7 @@ class PriceGroup extends BaseModel {
             ),
             array(
                 'name' =>        'required|between:2,35',
-                'price' => array('required', 'regex:/[\d]{6}.[\d]{2}/')
+                'price' => array('required', 'regex:/[\d]{1,6}(,[\d]{1,2})?/')
             )
         );
     }

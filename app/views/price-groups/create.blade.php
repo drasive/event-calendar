@@ -21,9 +21,9 @@
                         {{ Form::label('price', 'Price:', array('class' => 'form-label-inline')); }}
                     </td>
                     <td width="100%">
-                        // TODO: __Change to type="number", add client side validation
-                        {{ Form::text('price', '', array('class' => 'form-control',
-                          'placeholder' => 'The admission charge for this group of people. E.g.: 19.90',
+                        {{ Form::input('number', 'price', '', array('class' => 'form-control',
+                          'placeholder' => 'The admission charge for this group of people. E.g.: 19,95',
+                          'min' => '0', 'max' => '999999,99', 'step' => '0.05',
                           'autofocus' => 'autofocus')); }}
                     </td>
                 </tr>

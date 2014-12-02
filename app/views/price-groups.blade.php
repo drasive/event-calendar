@@ -27,7 +27,7 @@
                             @foreach ($priceGroups as $priceGroup)
                                 <tr>
                                     <td width="70%">{{{ $priceGroup->name }}}</td>
-									<td width="15%" class="right-align">{{{ $priceGroup->price }}}</td>
+									<td width="15%" class="right-align">{{{ number_format($priceGroup->price, 2, ',', "'") }}}</td>
                                     <td>
                                         <a title="Edit price group &quot;{{{ $priceGroup->name }}}&quot;" data-backdrop="static"
                                           href="price-groups/edit/{{ $priceGroup->id }}" data-toggle="modal" data-target="#editModal">
