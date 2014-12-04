@@ -29,7 +29,7 @@
                                     <td width="55%">{{{ $event->name }}}</td>
                                     <td width="25%" class="right-align">
                                         @if (count($event->shows) > 0)
-                                            {{{ $event->firstShow()->date }}}
+                                            {{{ date('d.m.Y', strtotime($event->firstShow()->date)) }}}
                                         @else
                                             -
                                         @endif
@@ -58,12 +58,12 @@
         </div>
     </div>
     
-    <div id="createModal" class="modal modal-remote fade" tabindex="-1" role="dialog">
+    <div id="createModal" class="modal modal-remote modal-wide fade" tabindex="-1" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content"></div>
         </div>
     </div>
-    <div id="editModal" class="modal modal-remote fade" tabindex="-1" role="dialog">
+    <div id="editModal" class="modal modal-remote modal-wide fade" tabindex="-1" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content"></div>
         </div>
