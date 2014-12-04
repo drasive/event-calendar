@@ -1,22 +1,19 @@
 <h3>{{{ $event->name }}} {{{ date('d.m.Y', strtotime($event->firstShow()->date)) }}} ({{{ ($event->genre->name) }}})</h3>
 <div>
     <div class="row">
-        <div class="event col-sm-7 col-md-8">
-            <p><i>{{{ $event->cast }}}</i></p>
+        <div class="event col-sm-7 col-md-8">            
             <p class="event-description">{{{ $event->description }}}</p>
+            <p class="event-cast"><i>Cast: {{{ $event->cast }}}</i></p>
             
-            <h4>Shows</h4>
+            <h4>Shows</h4> ({{{ date('H:i', strtotime($event->duration)) }}} hours each)
             <p>
                 @foreach ($event->shows as $index => $show)
-                    {{{ $show->time }}} ({{{ $show->date }}})
-                    
-                    @if ($index + 1 < count($event->shows))
-                        |
-                    @endif
+                    {{{ date('l, d. F', strtotime($show->date)) }}} at {{{ date('H:i', strtotime($show->time)) }}}
+                    <br />
                 @endforeach
             </p>
             
-            <h4>Admission Charge</h4>
+            <h4>Entrance Fees</h4>
             <p>
                 @foreach ($event->price_groups as $price_group)
                     {{{ $price_group->name }}}: Fr. {{{ $price_group->price }}}.-<br />
@@ -38,11 +35,11 @@
             </p>
         </div>
         <div class="text-center col-sm-5 col-md-4">
-            <a class="fancybox event-image" href="http://placehold.it/500x500">
-                <img src="http://placehold.it/150x150" alt="" />
+            <a class="fancybox event-image" href="http://placehold.it/1280x720">
+                <img src="http://placehold.it/100x100" alt="" />
             </a>
             
-            <p class="hidden-xs">{{{ $event->image_description }}}</p>
+            <p>{{{ $event->image_description }}}</p>
         </div>
     </div>
 </div>

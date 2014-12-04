@@ -2,15 +2,17 @@
 ***************************/
 .event h4 {
     margin-top: 15px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
+    display: inline-block;
 }
 
-.event-description  {
-    padding-top: 5px;
-    padding-bottom: 5px;
+.event-cast {
+    padding-bottom: 10px;
 }
 
 .event-image img {
+    width: 200px;
+    height: 200px;
     padding-bottom: 10px;
 }
 
