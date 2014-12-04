@@ -4,9 +4,13 @@ INSERT INTO `eventcalendar`.`genres` (`id`, `name`, `created_at`) VALUES ('2', '
 INSERT INTO `eventcalendar`.`genres` (`id`, `name`, `created_at`) VALUES ('3', 'Theater', '2014-11-16 20:00');
 
 # events
-INSERT INTO `eventcalendar`.`events` (`id`, `genre_id`, `name`, `description`, `duration`, `cast`, `created_at`) VALUES ('1', '2', 'Weihnachtsparty', 'Die diesjährige Weinachtsparty.', '3:00:00', 'Sasha Grey, Belle Knox, Charlie Laine', '2014-11-16 20:00');
-INSERT INTO `eventcalendar`.`events` (`id`, `genre_id`, `name`, `description`, `duration`, `cast`, `created_at`) VALUES ('2', '1', 'Sommerfreude', 'Konzert zur Feier des Sommerbeginns.', '1:15:00', 'Béatrice Duc', '2014-11-16 20:00');
-INSERT INTO `eventcalendar`.`events` (`id`, `genre_id`, `name`, `description`, `duration`, `cast`, `created_at`) VALUES ('3', '3', 'Ostertheater', 'Das diesjährige Ostertheater.', '1:30:00', 'Dimitri Vranken', '2014-11-16 20:00');
+INSERT INTO `eventcalendar`.`events` (`id`, `genre_id`, `name`, `description`, `duration`, `cast`, `image_description`, `created_at`) VALUES ('1', '2', 'Weihnachtsparty', 'Die diesjährige Weinachtsparty.', '3:00:00', 'Sasha Grey, Tori Black, Charlie Laine',
+                                                                                                                                              'Dies ist eine eher lange Bildbeschreibung. Eine eher lange Bildbeschreibung. Eine eher lange Bildbeschreibung. Eine eher lange Bildbeschreibung.',
+                                                                                                                                              '2014-11-16 20:00');
+INSERT INTO `eventcalendar`.`events` (`id`, `genre_id`, `name`, `description`, `duration`, `cast`, `image_description`, `created_at`) VALUES ('2', '1', 'Sommerfreude', 'Konzert zur Feier des Sommerbeginns.', '1:15:00', 'Béatrice Duc', null, '2014-11-16 20:00');
+INSERT INTO `eventcalendar`.`events` (`id`, `genre_id`, `name`, `description`, `duration`, `cast`, `image_description`, `created_at`) VALUES ('3', '3', 'Osterfest',
+                                                                                                                                              'Das diesjährige Ostertheater. Die ist eine lange Beschreibung. Eine lange Beschreibung. Eine lange Beschreibung. Eine lange Beschreibung. Eine lange Beschreibung. Eine lange Beschreibung. Eine lange Beschreibung. Eine lange Beschreibung. Eine lange Beschreibung. Eine lange Beschreibung. Eine lange Beschreibung. Eine lange Beschreibung. Eine lange Beschreibung. Eine lange Beschreibung. Eine lange Beschreibung. Eine lange Beschreibung. Eine lange Beschreibung. Eine lange Beschreibung.',
+                                                                                                                                              '1:30:00', 'Dimitri Vranken', 'Dies ist eine kurze Bildbeschreibung.', '2014-11-16 20:00');
 
 # price_groups
 INSERT INTO `eventcalendar`.`price_groups` (`id`, `name`, `price`, `created_at`) VALUES ('1', 'Erwachsene', '19.90', '2014-11-16 20:00');
@@ -24,12 +28,12 @@ INSERT INTO `eventcalendar`.`event_price_group` (`event_id`, `price_group_id`) V
 INSERT INTO `eventcalendar`.`event_price_group` (`event_id`, `price_group_id`) VALUES ('3', '3');
 
 # links
-INSERT INTO `eventcalendar`.`links` (`id`, `event_id`, `url`, `Name`, `created_at`) VALUES ('1', '1', 'https://www.google.com/', 'Google', '2014-11-16 20:00');
-INSERT INTO `eventcalendar`.`links` (`id`, `event_id`, `url`, `Name`, `created_at`) VALUES ('2', '1', 'https://www.bing.com/', 'Bing', '2014-11-16 20:00');
-INSERT INTO `eventcalendar`.`links` (`id`, `event_id`, `url`, `Name`, `created_at`) VALUES ('3', '2', 'https://www.yahoo.com/', 'Yahoo', '2014-11-16 20:00');
-INSERT INTO `eventcalendar`.`links` (`id`, `event_id`, `url`, `Name`, `created_at`) VALUES ('4', '3', 'https://duckduckgo.com/', 'DuckDuckGo', '2014-11-16 20:00');
-INSERT INTO `eventcalendar`.`links` (`id`, `event_id`, `url`, `Name`, `created_at`) VALUES ('5', '3', 'https://www.baidu.com/', 'Baidu', '2014-11-16 20:00');
-INSERT INTO `eventcalendar`.`links` (`id`, `event_id`, `url`, `Name`, `created_at`) VALUES ('6', '3', 'http://www.msn.com/', 'MSN', '2014-11-16 20:00');
+INSERT INTO `eventcalendar`.`links` (`id`, `event_id`, `url`, `Name`, `created_at`) VALUES ('1', '1', 'http://www.google.com/', 'www.google.com', '2014-11-16 20:00');
+INSERT INTO `eventcalendar`.`links` (`id`, `event_id`, `url`, `Name`, `created_at`) VALUES ('2', '1', 'https://www.bing.com/', 'www.bing.com', '2014-11-16 20:00');
+INSERT INTO `eventcalendar`.`links` (`id`, `event_id`, `url`, `Name`, `created_at`) VALUES ('3', '2', 'https://www.yahoo.com/', 'www.yahoo.com', '2014-11-16 20:00');
+INSERT INTO `eventcalendar`.`links` (`id`, `event_id`, `url`, `Name`, `created_at`) VALUES ('4', '2', 'https://duckduckgo.com/', null, '2014-11-16 20:00');
+INSERT INTO `eventcalendar`.`links` (`id`, `event_id`, `url`, `Name`, `created_at`) VALUES ('5', '3', 'https://www.baidu.com/', 'www.baidu.com', '2014-11-16 20:00');
+INSERT INTO `eventcalendar`.`links` (`id`, `event_id`, `url`, `Name`, `created_at`) VALUES ('6', '3', 'http://www.msn.com/', null, '2014-11-16 20:00');
 
 # shows
 INSERT INTO `eventcalendar`.`shows` (`id`, `event_id`, `date`, `time`, `created_at`) VALUES ('1', '1', '2014-12-22', '23:00:00', '2014-11-16 20:00');
