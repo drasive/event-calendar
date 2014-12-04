@@ -16,7 +16,7 @@
             <p>
                 There are no events yet.<br />
                 <br />
-				<a class="btn btn-success" data-backdrop="static"
+                <a class="btn btn-success" data-backdrop="static"
                   href="events/create" data-toggle="modal" data-target="#createModal">
                   Create Event</a>
             </p>
@@ -27,14 +27,14 @@
                             @foreach ($events as $event)
                                 <tr>
                                     <td width="55%">{{{ $event->name }}}</td>
-									<td width="25%" class="right-align">
-									    @if (count($event->shows) > 0)
-									        {{{ $event->firstShow()->date }}}
-									    @else
-									        -
-									    @endif
-									</td>
-									<td width="20%" class="right-align">{{{ count($event->shows) }}} show(s)</td>
+                                    <td width="25%" class="right-align">
+                                        @if (count($event->shows) > 0)
+                                            {{{ $event->firstShow()->date }}}
+                                        @else
+                                            -
+                                        @endif
+                                    </td>
+                                    <td width="20%" class="right-align">{{{ count($event->shows) }}} show(s)</td>
                                     <td>
                                         <a title="Edit event &quot;{{{ $event->name }}}&quot;" data-backdrop="static"
                                           href="events/edit/{{ $event->id }}" data-toggle="modal" data-target="#editModal">

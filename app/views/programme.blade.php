@@ -36,4 +36,8 @@
 
 @section('scripts')
     <script src="js/events.js"></script>
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script src="js/images.js"></script>
 @stop

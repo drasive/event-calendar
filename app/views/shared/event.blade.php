@@ -1,5 +1,10 @@
 <h3>{{{ $event->name }}}</h3>
 <div>
+    <p>
+        <a class="fancybox" href="http://placehold.it/500x500">
+            <img src="http://placehold.it/150x150" alt="" />
+        </a>
+    </p>
     <p>{{{ $event->genre->name }}}, {{{ $event->duration }}} </p>
     <p>{{{ $event->description }}}</p>
     <p>{{{ $event->cast }}}</p>
