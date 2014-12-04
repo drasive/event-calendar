@@ -1,8 +1,21 @@
-.right-align {
-    text-align: right;
+/* Events
+***************************/
+.event h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
+.event-description  {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 
+.event-image img {
+    padding-bottom: 10px;
+}
+
+/* Tables
+***************************/
 .management td {
     padding-bottom: 8px;
 }
@@ -14,4 +27,11 @@
 .form-label-inline {
     margin-top: 3px;
 	margin-right: 12px;
+}
+
+
+/* Helpers
+***************************/
+.right-align {
+    text-align: right;
 }
