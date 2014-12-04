@@ -1,6 +1,7 @@
-- Darstellung Events
 - Filtern nach Genre
-- Verwalten Shows/ Links
-- Alerts in Modals
+- Verwalten von Shows und Links
+- Alerts in Verwaltungsmodals anzeigen, nicht auf der Elternseite
 - Archiv
 - Login/ Logout
+- Bilder hochladen & thumbnail generieren
+- Benutzeranleitung erstellen
