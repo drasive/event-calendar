@@ -1,0 +1,6 @@
+- Darstellung Events
+- Filtern nach Genre
+- Verwalten Shows/ Links
+- Alerts in Modals
+- Archiv
+- Login/ Logout
