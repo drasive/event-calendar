@@ -30,7 +30,7 @@ class Event extends BaseModel {
             array(
                 'name' => $this->name,
                 'description' => $this->description,
-                'duration' => $this->duration,
+                'duration' => date('H:i', strtotime($this->duration)),
                 'cast' => $this->cast,
                 'image_description' => $this->image_description
             ),
