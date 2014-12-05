@@ -3,7 +3,6 @@
 .event h4 {
     margin-top: 15px;
     margin-bottom: 3px;
-    display: inline-block;
 }
 
 .event-cast {
@@ -15,6 +14,12 @@
     height: 200px;
     padding-bottom: 10px;
 }
+
+
+.genre-filter {
+    margin-bottom: 15px;
+}
+
 
 /* Tables
 ***************************/
@@ -28,12 +33,21 @@
 
 .form-label-inline {
     margin-top: 3px;
-	margin-right: 12px;
+    margin-right: 12px;
 }
 
 
 /* Other
 ***************************/
+h1 + .title-addition {
+    font-size: 20px;
+}
+
+h4 + .title-addition {
+    font-size: 15px;
+}
+
+
 .modal-wide .modal-dialog {
   width: 85%;
 }
@@ -45,6 +59,10 @@
 
 /* Helpers
 ***************************/
+.inline-block {
+    display: inline-block;
+}
+
 .right-align {
     text-align: right;
 }

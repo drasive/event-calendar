@@ -5,7 +5,7 @@
             <p class="event-description">{{{ $event->description }}}</p>
             <p class="event-cast"><i>Cast: {{{ $event->cast }}}</i></p>
             
-            <h4>Shows</h4> ({{{ date('H:i', strtotime($event->duration)) }}} hours each)
+            <h4 class="inline-block">Shows</h4> <span class="title-addition">({{{ date('H:i', strtotime($event->duration)) }}} hours each)</span>
             <p>
                 @foreach ($event->shows as $index => $show)
                     {{{ date('l, d. F', strtotime($show->date)) }}} at {{{ date('H:i', strtotime($show->time)) }}}
