@@ -1,13 +1,27 @@
 <?php namespace EventCalendar;
 
-class Link extends BaseModel {
-    
-    // Setup
-    protected $guarded = array('id', 'event_id');
+use LaravelBook\Ardent\Ardent;
+use Validator;
+
+class Link extends Ardent {
     
     // Relations
     public function event() {
         return $this->belongsTo('Event');
+    }
+    
+    // Methods
+    public function getValidator() {
+        return Validator::make(
+            array(
+                'name' => $this->name,
+                'url' =>  $this->url
+            ),
+            array(
+                'name' => 'between:0,50',
+                'url' =>  'required|between:5,255|url'
+            )
+        );
     }
     
 }

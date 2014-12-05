@@ -1,12 +1,10 @@
 <?php namespace EventCalendar;
 
+use LaravelBook\Ardent\Ardent;
 use Validator;
 
-class PriceGroup extends BaseModel {
+class PriceGroup extends Ardent {
 
-    // Setup
-    protected $fillable = array('name', 'price');
-    
     // Relations
     public function events() {
         return $this->belongsToMany('EventCalendar\Event');
@@ -16,8 +14,8 @@ class PriceGroup extends BaseModel {
     public function getValidator() {
         return Validator::make(
             array(
-                'name' => $this->name,
-                'price' => $this->price
+                'name' =>        $this->name,
+                'price' =>       $this->price
             ),
             array(
                 'name' =>        'required|between:2,35',

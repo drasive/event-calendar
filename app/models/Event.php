@@ -1,11 +1,9 @@
 <?php namespace EventCalendar;
 
+use LaravelBook\Ardent\Ardent;
 use Validator;
 
-class Event extends BaseModel {
-
-    // Setup
-    protected $guarded = array('id');
+class Event extends Ardent {
 
     // Relations
     public function genre() {
@@ -28,10 +26,10 @@ class Event extends BaseModel {
     public function getValidator() {
         return Validator::make(
             array(
-                'name' => $this->name,
-                'description' => $this->description,
-                'duration' => date('H:i', strtotime($this->duration)),
-                'cast' => $this->cast,
+                'name' =>              $this->name,
+                'description' =>       $this->description,
+                'duration' =>          date('H:i', strtotime($this->duration)),
+                'cast' =>              $this->cast,
                 'image_description' => $this->image_description
             ),
             array(

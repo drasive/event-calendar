@@ -1,11 +1,9 @@
 <?php namespace EventCalendar;
 
+use LaravelBook\Ardent\Ardent;
 use Validator;
 
-class Genre extends BaseModel {
-    
-    // Setup
-    protected $fillable = array('name');
+class Genre extends Ardent {
     
     // Relations
     public function events() {
