@@ -5,7 +5,7 @@
 <div class="modal-body">
     {{ Form::open(array('id' => 'deleteEventForm', 'url' => 'api/events/' . $event->id, 'method' => 'delete')) }}
         <p>
-            Are you sure you want to delete the event "{{{ $event->name }}}"?<br />
+            Are you sure you want to delete the event "{{{ $event->name }}}" and all of its shows and links?<br />
             The deletion will happen immediately and can't be reversed.
         </p>
     {{ Form::close() }}

@@ -37,6 +37,14 @@
 }
 
 
+/* Forms
+***************************/
+textarea.form-control {
+    resize: vertical;
+	max-height: 300px; 
+}
+
+
 /* Other
 ***************************/
 h1 + .title-addition {
@@ -48,8 +56,22 @@ h4 + .title-addition {
 }
 
 
-.modal-wide .modal-dialog {
-  width: 85%;
+@media(max-width:767px) {
+    .modal-wide .modal-dialog {
+        width: 97%;
+    }
+}
+
+@media(min-width:768px) {
+    .modal-wide .modal-dialog {
+        width: 75%;
+    }
+}
+
+@media(min-width:1200px) {
+    .modal-wide .modal-dialog {
+        width: 60%;
+    }
 }
 
 .modal-wide .modal-body {
@@ -65,4 +87,9 @@ h4 + .title-addition {
 
 .right-align {
     text-align: right;
+}
+
+
+.margin-right {
+    padding-right: 15px;
 }
