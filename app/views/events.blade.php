@@ -23,31 +23,36 @@
             @else
                 <div class="table-responsive">
                     <table class="table table-striped">
-                        <tbody>
-                            @foreach ($events as $event)
-                                <tr>
-                                    <td width="55%">{{{ $event->name }}}</td>
-                                    <td width="25%" class="right-align">
-                                        @if (count($event->shows) > 0)
-                                            {{{ date('d.m.Y', strtotime($event->firstShow()->date)) }}}
-                                        @else
-                                            -
-                                        @endif
-                                    </td>
-                                    <td width="20%" class="right-align">{{{ count($event->shows) }}} show(s)</td>
-                                    <td>
-                                        <a title="Edit event &quot;{{{ $event->name }}}&quot;" data-backdrop="static"
-                                          href="events/edit/{{ $event->id }}" data-toggle="modal" data-target="#editModal">
-                                            <span class="fa fa-pencil fa-fw"></span></a>
-                                    </td>
-                                    <td>
-                                        <a title="Delete event &quot;{{{ $event->name }}}&quot;" data-backdrop="static"
-                                          href="events/delete/{{ $event->id }}" data-toggle="modal" data-target="#deleteModal">
-                                          <span class="fa fa-trash fa-fw"></span></a>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th class="right-align">First Show</th>
+                            <th class="right-align">Shows</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        @foreach ($events as $event)
+                            <tr>
+                                <td width="55%">{{{ $event->name }}}</td>
+                                <td width="25%" class="right-align">
+                                    @if (count($event->shows) > 0)
+                                        {{{ date('d.m.Y', strtotime($event->firstShow()->date)) }}}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td width="20%" class="right-align">{{{ count($event->shows) }}} show(s)</td>
+                                <td>
+                                    <a title="Edit event &quot;{{{ $event->name }}}&quot;" data-backdrop="static"
+                                      href="events/edit/{{ $event->id }}" data-toggle="modal" data-target="#editModal">
+                                        <span class="fa fa-pencil fa-fw"></span></a>
+                                </td>
+                                <td>
+                                    <a title="Delete event &quot;{{{ $event->name }}}&quot;" data-backdrop="static"
+                                      href="events/delete/{{ $event->id }}" data-toggle="modal" data-target="#deleteModal">
+                                      <span class="fa fa-trash fa-fw"></span></a>
+                                </td>
+                            </tr>
+                        @endforeach
                     </table>
                 </div>
                 

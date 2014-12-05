@@ -23,29 +23,32 @@
             @else
                 <div class="table-responsive">
                     <table class="table table-striped">
-                        <tbody>
-                            @foreach ($genres as $genre)
-                                <tr>
-                                    <td width="100%">{{{ $genre->name }}}</td>
-                                    <td>
-                                        <a title="Edit genre &quot;{{{ $genre->name }}}&quot;" data-backdrop="static"
-                                             href="genres/edit/{{ $genre->id }}" data-toggle="modal" data-target="#editModal">
-                                            <span class="fa fa-pencil fa-fw"></span></a>
-                                    </td>
-                                    <td>
-                                        @if (count($genre->events) > 0)
-                                            <a title="This genre is associated with {{{ count($genre->events) }}} event(s) and therefore can't be deleted"
-                                              disabled="disabled"  style="color: grey;">
-                                              <span class="fa fa-trash fa-fw"></span></a>
-                                        @else
-                                            <a title="Delete genre &quot;{{{ $genre->name }}}&quot;" data-backdrop="static"
-                                              href="genres/delete/{{ $genre->id }}" data-toggle="modal" data-target="#deleteModal">
-                                              <span class="fa fa-trash fa-fw"></span></a>
-                                        @endif
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        @foreach ($genres as $genre)
+                            <tr>
+                                <td width="100%">{{{ $genre->name }}}</td>
+                                <td>
+                                    <a title="Edit genre &quot;{{{ $genre->name }}}&quot;" data-backdrop="static"
+                                         href="genres/edit/{{ $genre->id }}" data-toggle="modal" data-target="#editModal">
+                                        <span class="fa fa-pencil fa-fw"></span></a>
+                                </td>
+                                <td>
+                                    @if (count($genre->events) > 0)
+                                        <a title="This genre is associated with {{{ count($genre->events) }}} event(s) and therefore can't be deleted"
+                                          disabled="disabled"  style="color: grey;">
+                                          <span class="fa fa-trash fa-fw"></span></a>
+                                    @else
+                                        <a title="Delete genre &quot;{{{ $genre->name }}}&quot;" data-backdrop="static"
+                                          href="genres/delete/{{ $genre->id }}" data-toggle="modal" data-target="#deleteModal">
+                                          <span class="fa fa-trash fa-fw"></span></a>
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
                     </table>
                 </div>
                 
