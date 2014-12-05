@@ -7,6 +7,9 @@ composer.lock
 .DS_Store
 Thumbs.db
 
+### Uploads ###
+public/images/uploads
+
 
 
 # Created by https://www.gitignore.io

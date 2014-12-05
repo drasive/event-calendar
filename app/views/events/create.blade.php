@@ -57,7 +57,8 @@
                     </td>
                     <td width="100%">
                         {{ Form::file('image', array('class' => 'form-control',
-                          'placeholder' => 'The image for this event.')); }}
+                          'placeholder' => 'The image for this event.',
+                          'accept' => 'image/*')); }}
                     </td>
                 </tr>
                 <tr>

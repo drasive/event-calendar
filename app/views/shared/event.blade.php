@@ -16,7 +16,7 @@
             <h4>Entrance Fees</h4>
             <p>
                 @foreach ($event->price_groups as $price_group)
-                    {{{ $price_group->name }}}: Fr. {{{ $price_group->price }}}.-<br />
+                    {{{ $price_group->name }}}: Fr. {{{ $price_group->price }}}<br />
                 @endforeach
             </p>
             
@@ -34,12 +34,15 @@
                 @endforeach
             </p>
         </div>
-        <div class="text-center col-sm-5 col-md-4">
-            <a class="fancybox event-image" href="http://placehold.it/1280x720">
-                <img src="http://placehold.it/100x100" alt="" />
-            </a>
-            
-            <p>{{{ $event->image_description }}}</p>
-        </div>
+        @if (!is_null($event->image_path))
+            <div class="text-center col-sm-5 col-md-4">
+                <a class="fancybox event-image" href="images/uploads/{{ $event->image_path }}"
+                  title="{{{ $event->name }}}">
+                    <img src="images/uploads/{{ $event->image_path }}" />
+                </a>
+                
+                <p>{{{ $event->image_description }}}</p>
+            </div>
+        @endif
     </div>
 </div>

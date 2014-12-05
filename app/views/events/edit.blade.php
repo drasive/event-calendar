@@ -3,7 +3,7 @@
     <h4 class="modal-title">Edit "{{{ $event->name }}}"</h4>
 </div>
 <div class="modal-body">
-    {{ Form::open(array('id' => 'editEventForm', 'url' => 'api/events/' . $event->id, 'method' => 'post')) }}
+    {{ Form::open(array('id' => 'editEventForm', 'url' => 'api/events/' . $event->id, 'method' => 'post',  'files' => true)) }}
         <table class="management">
             <tbody>
                 <tr>
@@ -57,7 +57,8 @@
                     </td>
                     <td width="100%">
                         {{ Form::file('image', array('class' => 'form-control',
-                          'placeholder' => 'The image for this event.')); }}
+                          'placeholder' => 'The image for this event.',
+                          'accept' => 'image/*')); }}
                     </td>
                 </tr>
                 <tr>

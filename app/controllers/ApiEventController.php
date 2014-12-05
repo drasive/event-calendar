@@ -6,6 +6,9 @@ class ApiEventController extends BaseController {
     
     // TODO: Find a way to move the redirects out of the controllers
     
+    protected static $IMAGE_FOLDER = 'public/images/uploads/';
+    
+    
     public function create() {
         $event = new Event();        
         $event->name = Input::get('name');
@@ -13,8 +16,8 @@ class ApiEventController extends BaseController {
         $event->description = Input::get('description');
         $event->duration = Input::get('duration');
         $event->cast = Input::get('cast');
-        // TODO: image
-        $event->image_path = Input::get('image');
+        // TODO__: Event has no id yet 
+        $event->image_path = self::saveImage('image', $event);
         $event->image_description = Input::get('image-description');
         
         // Validate input
@@ -37,8 +40,7 @@ class ApiEventController extends BaseController {
         $event->description = Input::get('description');
         $event->duration = Input::get('duration');
         $event->cast = Input::get('cast');
-        // TODO: image
-        $event->image_path = Input::get('image');
+        $event->image_path = self::saveImage('image', $event);
         $event->image_description = Input::get('image-description');
         
         // Validate input
@@ -57,12 +59,32 @@ class ApiEventController extends BaseController {
     public function delete() {
         $event = Event::find(Route::input('id'));
         
+        // Delete files
+        unlink(self::$IMAGE_FOLDER . $event->image_path);
+        
         // Delete model
         $event->delete();
         
         // Redirect
         return Redirect::to('events')->with(array('title' => 'Event deleted',
           'success' => "The event \"$event->name\" has been deleted successfully."));
+    }
+    
+    
+    protected static function saveImage($inputName, $event) {
+        if (!Input::hasFile($inputName)) {
+            return null;
+        }
+        
+        $image = Input::file('image');
+        if (!$image->isValid()) {
+            return null;
+        }
+        
+        $imagePath = $event->id . '_logo.' . $image->getClientOriginalExtension();        
+        $image->move(self::$IMAGE_FOLDER, $imagePath);
+        
+        return $imagePath;
     }
     
 }
