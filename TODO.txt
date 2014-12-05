@@ -1,7 +1,6 @@
-- Filtern nach Genre
 - Verwalten von Shows und Links
-- Alerts in Verwaltungsmodals anzeigen, nicht auf der Elternseite
 - Archiv
 - Login/ Logout
-- Bilder hochladen & thumbnail generieren
 - Benutzeranleitung erstellen
+- Thumbnail generieren
+- Alerts in Verwaltungsmodals anzeigen, nicht auf der Elternseite
