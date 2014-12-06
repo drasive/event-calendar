@@ -21,7 +21,7 @@
                 <h3>Technique</h3>
                 <p>
                     Frontend: A HTML5 & CSS3 website using Bootstrap and jQuery<br />
-                    Backend: PHP 5.4 (Laravel 4.2) running on IIS 8, MySQL 5.7
+                    Backend: PHP 5.4 using Laravel 4.2 running on IIS 8, MySQL 5.7
                 </p>
             </div>
         </div>

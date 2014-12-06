@@ -6,13 +6,13 @@
     {{ Form::open(array('id' => 'createEventForm', 'url' => 'api/events', 'method' => 'put', 'files' => true)) }}
         <div role="tabpanel">
             <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="#event" data-toggle="tab" role="tab" >Event</a></li>
-              <li role="presentation"><a href="#shows" data-toggle="tab" role="tab" >Shows</a></li>
-              <li role="presentation"><a href="#links" data-toggle="tab" role="tab" >Links</a></li>
+              <li role="presentation" class="active"><a href="#createEventTab" data-toggle="tab" role="tab" >Event</a></li>
+              <li role="presentation"><a href="#creatShowsTab" data-toggle="tab" role="tab" >Shows</a></li>
+              <li role="presentation"><a href="#createLinksTab" data-toggle="tab" role="tab" >Links</a></li>
             </ul>
         
             <div class="tab-content">
-                <div class="tab-pane fade in active" id="event">
+                <div class="tab-pane fade in active" id="createEventTab">
                     <h3>Event</h3>
                     <table class="management">
                         <tr>
@@ -80,11 +80,11 @@
                         </tr>
                     </table>
                 </div>
-                <div class="tab-pane fade" id="shows">
+                <div class="tab-pane fade" id="creatShowsTab">
                     <h3>Shows</h3>
                     
                 </div>
-                <div class="tab-pane fade" id="links">
+                <div class="tab-pane fade" id="createLinksTab">
                     <h3>Links</h3>
                     
                 </div>
@@ -98,3 +98,10 @@
     {{ Form::submit('Create event', array('class' => 'btn btn-success',
       'form' => 'createEventForm')); }}
 </div>
+
+<script type="text/javascript">
+    $(function() {
+        initializeShowManagement();
+        initializeLinkManagement();
+    });
+</script>

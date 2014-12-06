@@ -6,13 +6,13 @@
     {{ Form::open(array('id' => 'editEventForm', 'url' => 'api/events/' . $event->id, 'method' => 'post',  'files' => true)) }}
         <div role="tabpanel">
             <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="#event" data-toggle="tab" role="tab" >Event</a></li>
-              <li role="presentation"><a href="#shows" data-toggle="tab" role="tab" >Shows</a></li>
-              <li role="presentation"><a href="#links" data-toggle="tab" role="tab" >Links</a></li>
+              <li role="presentation" class="active"><a href="#editEventTab" data-toggle="tab" role="tab" >Event</a></li>
+              <li role="presentation"><a href="#editShowsTab" data-toggle="tab" role="tab" >Shows</a></li>
+              <li role="presentation"><a href="#editLinksTab" data-toggle="tab" role="tab" >Links</a></li>
             </ul>
         
             <div class="tab-content">
-                <div class="tab-pane fade in active" id="event">
+                <div class="tab-pane fade in active" id="editEventTab">
                     <h3>Event</h3>
                     <table class="management">
                         <tr>
@@ -80,32 +80,33 @@
                         </tr>
                     </table>
                 </div>
-                <div class="tab-pane fade" id="shows">
+                <div class="tab-pane fade" id="editShowsTab">
                     <h3>Shows</h3>
-                    
-                </div>
-                <div class="tab-pane fade" id="links">
-                    <h3>Links</h3>
                     <div class="table-responsive">
-                        <table class="table table-striped management" width="100%">
+                        <table id="shows" class="table table-striped management">
                             <tr>
-                                <th>URL</th>
-                                <th>Name</th>
-                            </tr>
-                            <tr>
-                                <td width="70%" class="margin-right">
-                                    <input id="url_1" name="url_1" type="url" class="form-control"
-                                      placeholder="The URL of the link. E.g.: http://www.gibm.ch"
-                                      required="required" pattern=".{5,255}" title="A valid URL">
-                                </td>
-                                <td width="30%">
-                                    <input id="name_1" name="name_1" type="text" class="form-control"
-                                      placeholder="The name of the link. E.g.: www.gibm.ch"
-                                      pattern=".{0,50}" title="Maximum 50 characters">
-                                </td>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th></th>
                             </tr>
                         </table>
                     </div>
+                    {{ Form::button('Add new Show', array('id' => 'add-show', 'class' => 'btn btn-default',
+                      'data-table' => '#shows')); }}
+                </div>
+                <div class="tab-pane fade" id="editLinksTab">
+                    <h3>Links</h3>
+                    <div class="table-responsive">
+                        <table id="links" class="table table-striped management">
+                            <tr>
+                                <th>URL</th>
+                                <th>Name</th>
+                                <th></th>
+                            </tr>
+                        </table>
+                    </div>
+                    {{ Form::button('Add new Link', array('id' => 'add-link', 'class' => 'btn btn-default',
+                      'data-table' => '#links')); }}
                 </div>
             </div>
         </div>
@@ -117,3 +118,10 @@
     {{ Form::submit('Save changes', array('class' => 'btn btn-primary',
       'form' => 'editEventForm')); }}
 </div>
+
+<script type="text/javascript">
+    $(function() {
+        initializeShowManagement();
+        initializeLinkManagement();
+    });
+</script>

@@ -83,4 +83,5 @@
 @section('scripts')
     <script src="js/common.js"></script>
     <script src="js/modals.js"></script>
+    <script src="js/manage-event.js"></script>
 @stop
