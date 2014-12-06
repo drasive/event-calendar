@@ -1,24 +1,19 @@
 <?php namespace EventCalendar;
 
+use Illuminate\Database\Eloquent\Collection;
 use Route, Input, Redirect;
 
 class ApiEventController extends BaseController {
     
     // TODO: Find a way to move the redirects out of the controllers
     
-    protected static $IMAGE_FOLDER = 'public/images/uploads/';
+    private static $IMAGE_FOLDER = 'public/images/uploads/';
     
     
-    public function create() {
-        $event = new Event();        
-        $event->name = Input::get('name');
-        $event->genre_id = Input::get('genre');
-        $event->description = Input::get('description');
-        $event->duration = Input::get('duration');
-        $event->cast = Input::get('cast');
-        // TODO__: Event has no id yet 
-        $event->image_path = self::saveImage('image', $event);
-        $event->image_description = Input::get('image-description');
+    public static function create() {
+        $event = self::buildEvent(new Event());
+        $shows = self::buildShows();
+        $links = self::buildLinks();
         
         // Validate input
         if ($event->getValidator()->fails()) {
@@ -33,15 +28,11 @@ class ApiEventController extends BaseController {
           'success' => "The event \"$event->name\" has been created successfully."));
     }
     
-    public function update() {
-        $event = Event::find(Route::input('id'));        
-        $event->name = Input::get('name');
-        $event->genre_id = Input::get('genre');
-        $event->description = Input::get('description');
-        $event->duration = Input::get('duration');
-        $event->cast = Input::get('cast');
-        $event->image_path = self::saveImage('image', $event);
-        $event->image_description = Input::get('image-description');
+    public static function update() {
+        $event = self::buildEvent(Event::find(Route::input('id')));
+        $shows = self::buildShows();
+        $links = self::buildLinks();
+        // TODO: __Update shows and links
         
         // Validate input
         if ($event->getValidator()->fails()) {
@@ -56,7 +47,7 @@ class ApiEventController extends BaseController {
           'success' => "The event \"$event->name\" has been updated successfully."));
     }
     
-    public function delete() {
+    public static function delete() {
         $event = Event::find(Route::input('id'));
         
         // Delete files
@@ -71,8 +62,54 @@ class ApiEventController extends BaseController {
     }
     
     
-    protected static function saveImage($inputName, $event) {
-        if (!Input::hasFile($inputName)) {
+    private static function buildEvent($event) {
+        $event->name = Input::get('name');
+        $event->genre_id = Input::get('genre');
+        $event->description = Input::get('description');
+        $event->duration = Input::get('duration');
+        $event->cast = Input::get('cast');
+        $event->image_path = self::saveImage();
+        $event->image_description = Input::get('image-description');
+        
+        return $event;
+    }
+    
+    private static function buildShows() {
+        $shows = new Collection();
+        
+        $dates = Input::get('show-date');        
+        $times = Input::get('show-time');
+        if ($dates == null) { 
+            return new Collection();
+        }
+        
+        foreach ($dates as $index => $date) {
+            $show = new Show(array('date' => $dates[$index], 'time' => $times[$index]));
+            $shows->push($show);
+        }
+        
+        return $shows;
+    }
+    
+    private static function buildLinks() {
+        $links = new Collection();
+        
+        $urls = Input::get('link-url');
+        $names = Input::get('link-name');        
+        if ($urls == null) {
+            return new Collection();
+        }
+        
+        foreach ($urls as $index => $url) {
+            $link = new Link(array('url' => $urls[$index], 'name' => $names[$index]));
+            $links->push($link);
+        }
+        
+        return $links;
+    }
+    
+    private static function saveImage() {
+        if (!Input::hasFile('image')) {
             return null;
         }
         
@@ -81,10 +118,17 @@ class ApiEventController extends BaseController {
             return null;
         }
         
-        $imagePath = $event->id . '_logo.' . $image->getClientOriginalExtension();        
-        $image->move(self::$IMAGE_FOLDER, $imagePath);
+        // Generate a random file name
+        while (true) {
+            $fileName = uniqid(rand(), true) . '.' . $image->getClientOriginalExtension();
+            
+            if (!file_exists(self::$IMAGE_FOLDER . $fileName)) {
+                break;
+            }
+        }    
+        $image->move(self::$IMAGE_FOLDER, $fileName);
         
-        return $imagePath;
+        return $fileName;
     }
     
 }

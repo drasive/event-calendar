@@ -5,6 +5,9 @@ use Validator;
 
 class Show extends Ardent {
     
+    // Setup
+    protected $fillable = array('date', 'time');
+    
 	// Relations
 	public function event() {
         return $this->belongsTo('Event');

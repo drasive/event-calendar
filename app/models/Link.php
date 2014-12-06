@@ -5,6 +5,9 @@ use Validator;
 
 class Link extends Ardent {
     
+    // Setup
+    protected $fillable = array('name', 'url');
+    
     // Relations
     public function event() {
         return $this->belongsTo('Event');
