@@ -1,27 +1,34 @@
 <?php namespace EventCalendar;
 
 use Illuminate\Database\Eloquent\Collection;
-use Route, Input, Redirect;
+use Controller, Route, Input, Redirect;
 
-class ApiEventController extends BaseController {
+class ApiEventController extends Controller {
     
-    // TODO: Find a way to move the redirects out of the controllers
+    // TODO: Find a way to move the redirects out of the API controllers
     
     private static $IMAGE_FOLDER = 'public/images/uploads/';
     
     
     public static function create() {
         $event = self::buildEvent(new Event());
-        $shows = self::buildShows();
-        $links = self::buildLinks();
         
         // Validate input
         if ($event->getValidator()->fails()) {
             return Redirect::to('events')->withErrors($event->getValidator());
         }
         
-        // Save model
+        // Save models
         $event->save();
+        
+        $shows = self::buildShows($event);
+        self::saveShows($shows, $event);
+        
+        $links = self::buildLinks($event);
+        self::saveLinks($links, $event);
+        
+        // Save files
+        self::saveImage($event->image_path);
         
         // Redirect
         return Redirect::to('events')->with(array('title' => 'Event created',
@@ -30,17 +37,25 @@ class ApiEventController extends BaseController {
     
     public static function update() {
         $event = self::buildEvent(Event::find(Route::input('id')));
-        $shows = self::buildShows();
-        $links = self::buildLinks();
-        // TODO: __Update shows and links
         
         // Validate input
         if ($event->getValidator()->fails()) {
             return Redirect::to('events')->withErrors($event->getValidator());
         }
         
-        // Save model
+        // Save models
         $event->save();
+        
+        $shows = self::buildShows($event);
+        self::saveShows($shows, $event);
+        
+        $links = self::buildLinks($event);
+        self::saveLinks($links, $event);
+        
+        // Save files
+        if (Input::hasFile('image')) {
+            self::saveImage($event->image_path);
+        }        
         
         // Redirect
         return Redirect::to('events')->with(array('title' => 'Event updated',
@@ -53,8 +68,9 @@ class ApiEventController extends BaseController {
         // Delete files
         unlink(self::$IMAGE_FOLDER . $event->image_path);
         
-        // Delete model
+        // Delete models
         $event->delete();
+        // Child entities are deleted by database cascades
         
         // Redirect
         return Redirect::to('events')->with(array('title' => 'Event deleted',
@@ -68,51 +84,59 @@ class ApiEventController extends BaseController {
         $event->description = Input::get('description');
         $event->duration = Input::get('duration');
         $event->cast = Input::get('cast');
-        $event->image_path = self::saveImage();
+        if (Input::hasFile('image')) {
+            $event->image_path = self::generateImageFileName();
+        }
         $event->image_description = Input::get('image-description');
         
         return $event;
     }
     
-    private static function buildShows() {
+    private static function buildShows($event) {
         $shows = new Collection();
         
-        $dates = Input::get('show-date');        
+        $dates = Input::get('show-date');
         $times = Input::get('show-time');
         if ($dates == null) { 
             return new Collection();
         }
         
         foreach ($dates as $index => $date) {
-            $show = new Show(array('date' => $dates[$index], 'time' => $times[$index]));
+            $show = new Show(array('event_id' => $event->id, 'date' => $dates[$index], 'time' => $times[$index]));
             $shows->push($show);
         }
         
         return $shows;
     }
     
-    private static function buildLinks() {
+    private static function buildLinks($event) {
         $links = new Collection();
         
         $urls = Input::get('link-url');
-        $names = Input::get('link-name');        
+        $names = Input::get('link-name');
         if ($urls == null) {
             return new Collection();
         }
         
         foreach ($urls as $index => $url) {
-            $link = new Link(array('url' => $urls[$index], 'name' => $names[$index]));
+            $link = new Link(array('event_id' => $event->id, 'url' => $urls[$index], 'name' => $names[$index]));
             $links->push($link);
         }
         
         return $links;
     }
     
-    private static function saveImage() {
-        if (!Input::hasFile('image')) {
-            return null;
+    
+    private static function saveImage($fileName) {
+        if ($fileName == null) {
+            return;
         }
         
+        $image = Input::file('image');
+        $image->move(self::$IMAGE_FOLDER, $fileName);
+    }
+    
+    private static function generateImageFileName() {
         $image = Input::file('image');
         if (!$image->isValid()) {
             return null;
@@ -125,10 +149,43 @@ class ApiEventController extends BaseController {
             if (!file_exists(self::$IMAGE_FOLDER . $fileName)) {
                 break;
             }
-        }    
-        $image->move(self::$IMAGE_FOLDER, $fileName);
+        }
         
         return $fileName;
+    }
+    
+    // TODO: Improve method to update event shows
+    private static function saveShows($shows, $event) {
+        // This method requires to a lot of unnecessary database access and
+        // makes the timestamps useless, but is faster to implement than
+        // a more robust and performance oriented solution.
+        
+        \DB::transaction(function() use ($shows, $event) {
+            // Delete all existing shows
+            $event->shows()->delete();
+            
+            // Create the new shows 
+            foreach ($shows as $show) {
+                $show->save();
+            }
+        });
+    }
+    
+    // TODO: Improve method to update event links
+    private static function saveLinks($links, $event) {
+        // This method requires to a lot of unnecessary database access and
+        // makes the timestamps useless, but is faster to implement than
+        // a more robust and performance oriented solution.
+        
+        \DB::transaction(function() use ($links, $event) {
+            // Delete all existing links
+            $event->links()->delete();
+            
+            // Create the new links
+            foreach ($links as $link) {
+                $link->save();
+            }
+        });
     }
     
 }

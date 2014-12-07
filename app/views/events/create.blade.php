@@ -82,11 +82,31 @@
                 </div>
                 <div class="tab-pane fade" id="creatShowsTab">
                     <h3>Shows</h3>
-                    
+                    <div class="table-responsive">
+                        <table id="shows" class="table table-striped management">
+                            <tr>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th></th>
+                            </tr>
+                        </table>
+                    </div>
+                    {{ Form::button('Add new Show', array('id' => 'add-show', 'class' => 'btn btn-default',
+                      'data-table' => '#shows')); }}
                 </div>
                 <div class="tab-pane fade" id="createLinksTab">
                     <h3>Links</h3>
-                    
+                    <div class="table-responsive">
+                        <table id="links" class="table table-striped management">
+                            <tr>
+                                <th>URL</th>
+                                <th>Name</th>
+                                <th></th>
+                            </tr>
+                        </table>
+                    </div>
+                    {{ Form::button('Add new Link', array('id' => 'add-link', 'class' => 'btn btn-default',
+                      'data-table' => '#links')); }}
                 </div>
             </div>
         </div>

@@ -19,12 +19,12 @@ function initializeShowManagement() {
 
 function addShowRow() {
     showTable.find('tbody:last').append('<tr> \
-                                             <td> \
+                                             <td width=50%"> \
                                                  <input name="show-date[]" type="date" class="form-control" \
                                                    placeholder="The date of the show. E.g.: 15.03.2015" \
                                                    required="required" title="A valid date in the format DD.MM.YYYY"> \
                                              </td> \
-                                             <td> \
+                                             <td width="50%"> \
                                                  <input name="show-time[]" type="time" class="form-control" \
                                                    placeholder="The time the show starts at. E.g.: 21:30" \
                                                    required="required" title="00:00 to 23:59"> \

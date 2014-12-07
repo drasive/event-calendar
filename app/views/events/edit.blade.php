@@ -89,6 +89,27 @@
                                 <th>Time</th>
                                 <th></th>
                             </tr>
+                            @foreach ($event->shows as $show)
+                                <tr>
+                                    <td width="50%">
+                                        <input name="show-date[]" type="date" class="form-control"
+                                          value="{{ $show->date }}"
+                                          placeholder="The date of the show. E.g.: 15.03.2015"
+                                          required="required" title="A valid date in the format DD.MM.YYYY">
+                                    </td>
+                                    <td width="50%">
+                                        <input name="show-time[]" type="time" class="form-control"
+                                          value="{{ $show->time }}"
+                                          placeholder="The time the show starts at. E.g.: 21:30"
+                                          required="required" title="00:00 to 23:59">
+                                    </td>
+                                    <td>
+                                        <a class="delete-show" title="Delete this show">
+                                            <span class="fa fa-trash fa-fw"></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </table>
                     </div>
                     {{ Form::button('Add new Show', array('id' => 'add-show', 'class' => 'btn btn-default',
@@ -103,6 +124,27 @@
                                 <th>Name</th>
                                 <th></th>
                             </tr>
+                            @foreach ($event->links as $link)
+                                <tr>
+                                    <td width="70%" class="margin-right">
+                                        <input name="link-url[]" type="url" class="form-control"
+                                          value="{{ $link->url }}"
+                                          placeholder="The URL of the link. E.g.: http://www.gibm.ch"
+                                          required="required" pattern=".{5,255}" title="A valid URL">
+                                    </td>
+                                    <td width="30%">
+                                        <input name="link-name[]" type="text" class="form-control"
+                                          value="{{ $link->name }}"
+                                          placeholder="The name of the link. E.g.: www.gibm.ch"
+                                          pattern=".{0,50}" title="Maximum 50 characters">
+                                    </td>
+                                    <td>
+                                        <a class="delete-link" title="Delete this link">
+                                          <span class="fa fa-trash fa-fw"></span>
+                                        </a>
+                                    </td>
+                                 </tr>
+                            @endforeach
                         </table>
                     </div>
                     {{ Form::button('Add new Link', array('id' => 'add-link', 'class' => 'btn btn-default',

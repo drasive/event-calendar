@@ -6,7 +6,7 @@ use Validator;
 class Show extends Ardent {
     
     // Setup
-    protected $fillable = array('date', 'time');
+    protected $fillable = array('event_id', 'date', 'time');
     
 	// Relations
 	public function event() {
