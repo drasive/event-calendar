@@ -1,11 +1,8 @@
 <?php namespace EventCalendar;
 
-use View;
-use Input;
-use Auth;
-use Redirect;
+use Controller, View, Input, Auth, Redirect;
 
-class LoginController extends BaseController {
+class LoginController extends Controller {
     
     public function index()	{
         return View::make('login');

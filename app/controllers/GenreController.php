@@ -1,8 +1,8 @@
 <?php namespace EventCalendar;
 
-use Route, View;
+use Controller, Route, View;
 
-class GenreController extends BaseController {
+class GenreController extends Controller {
     
     public function index() {
         $genres = Genre::orderBy('name')->get();

@@ -1,8 +1,8 @@
 <?php namespace EventCalendar;
 
-use Route, Input, Redirect;
+use Controller, Route, Input, Redirect;
 
-class ApiGenreController extends BaseController {
+class ApiGenreController extends Controller {
     
     public function create() {
         $genre = new Genre();

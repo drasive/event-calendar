@@ -1,8 +1,8 @@
 <?php namespace EventCalendar;
 
-use Route, View;
+use Controller, Route, View;
 
-class PriceGroupController extends BaseController {
+class PriceGroupController extends Controller {
     
     public function index() {
         $priceGroups = PriceGroup::orderBy('name')->get();

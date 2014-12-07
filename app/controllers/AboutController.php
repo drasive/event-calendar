@@ -1,8 +1,8 @@
 <?php namespace EventCalendar;
 
-use View;
+use Controller, View;
 
-class AboutController extends BaseController {
+class AboutController extends Controller {
     
     public function index() {
         return View::make('about');

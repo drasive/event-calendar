@@ -1,8 +1,8 @@
 <?php namespace EventCalendar;
 
-use View, Input, Paginator;
+use Controller, View, Input, Paginator;
 
-class ProgrammeController extends BaseController {
+class ProgrammeController extends Controller {
     
     public function index()	{
         // TODO: Is this the correct behaviour?

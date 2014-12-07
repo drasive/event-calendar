@@ -1,17 +1,17 @@
 <?php namespace EventCalendar;
 
-use Route, View;
+use Controller, Route, View;
 
-class EventController extends BaseController {
+class EventController extends Controller {
     
     public function index() {
-        $events = Event::orderBy('name')->get();
+        $events = Event::all();
         
         $events = $events->sortByDesc(function ($event) {
             if ($event->firstShow() === null) {
-                return 999999999999;
+                return 999999999999; // Put this event at the beginning
             }
-                      
+            
             return strtotime($event->firstShow()->date . ' ' . $event->firstShow()->time);
         });
         

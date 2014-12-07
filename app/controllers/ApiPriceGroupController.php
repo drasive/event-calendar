@@ -1,8 +1,8 @@
 <?php namespace EventCalendar;
 
-use Route, Input, Redirect;
+use Controller, Route, Input, Redirect;
 
-class ApiPriceGroupController extends BaseController {
+class ApiPriceGroupController extends Controller {
     
     public function create() {
         $priceGroup = new PriceGroup();        
