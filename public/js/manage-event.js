@@ -40,10 +40,13 @@ function addShowRow() {
 }
 
 function deleteShowRow(sender) {
-    var row = sender.parents('tr').first();
-    row.remove();
-    
-    updateShowDeleteHandlers();
+    // TODO: Display date and time of show the user is about to delete
+    if (confirm('Do you really want to delete this show?')) {
+        var row = sender.parents('tr').first();
+        row.remove();
+        
+        updateShowDeleteHandlers();
+    }
 }
 
 
@@ -95,10 +98,13 @@ function addLinkRow() {
 }
 
 function deleteLinkRow(sender) {
-    var row = sender.parents('tr').first();
-    row.remove();
-    
-    updateLinkDeleteHandlers();
+    // TODO: Display name (if available) or url of link the user is about to delete
+    if (confirm('Do you really want to delete this link?')) {
+        var row = sender.parents('tr').first();
+        row.remove();
+        
+        updateLinkDeleteHandlers();
+    }
 }
 
 
