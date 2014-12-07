@@ -25,7 +25,7 @@
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
                 <li>
-                    <a href="programme" class="active"><i class="glyphicon glyphicon-calendar" style="margin-left: 3px;"></i> Programme</a>
+                    <a href="programme"><i class="glyphicon glyphicon-calendar" style="margin-left: 3px;"></i> Programme</a>
                 </li>
 				<li>
                     <a href="archive"><i class="fa fa-archive fa-fw"></i> Archive</a>

@@ -6,6 +6,8 @@ Route::pattern('id', '[0-9]+');
 Route::get('/', 'EventCalendar\ProgrammeController@index');
 Route::get('/programme', function() { return Redirect::to('/'); });
 
+Route::get('/archive', 'EventCalendar\ArchiveController@index');
+
 Route::get('/login', 'EventCalendar\LoginController@index');
 Route::post('login/authenticate', 'EventCalendar\LoginController@authenticate');
 
