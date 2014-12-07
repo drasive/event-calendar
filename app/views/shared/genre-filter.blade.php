@@ -1,4 +1,4 @@
-@if (count($genres) > 0)
+@if (count($genres) > 1)
     <div class="genre-filter btn-group"  role="group">
         <a href="." class="btn btn-default
           @if (is_null($selectedGenre)) active @endif">All</a>

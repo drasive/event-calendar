@@ -1,6 +1,6 @@
-- Verwalten von Shows und Links
-- Archiv
 - Login/ Logout
 - Benutzeranleitung erstellen
 - Thumbnail generieren
 - Alerts in Verwaltungsmodals anzeigen, nicht auf der Elternseite
+
+- Show events without shows?
