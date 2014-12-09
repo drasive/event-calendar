@@ -8,7 +8,7 @@
             <tbody>
                 <tr>
                     <td>
-                        {{ Form::label('name', 'Name:', array('class' => 'form-label-inline')); }}
+                        {{ Form::label('name', '*Name:', array('class' => 'form-label-inline')); }}
                     </td>
                     <td width="100%">
                         {{ Form::text('name', $genre->name, array('class' => 'form-control',

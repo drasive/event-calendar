@@ -8,7 +8,7 @@
             <tbody>
                 <tr>
                     <td>
-                        {{ Form::label('name', 'Name:', array('class' => 'form-label-inline')); }}
+                        {{ Form::label('name', '*Name:', array('class' => 'form-label-inline')); }}
                     </td>
                     <td width="100%">
                         {{ Form::text('name', $priceGroup->name, array('class' => 'form-control',
@@ -18,7 +18,7 @@
                 </tr>
                 <tr>
                     <td>
-                        {{ Form::label('price', 'Price:', array('class' => 'form-label-inline')); }}
+                        {{ Form::label('price', '*Price:', array('class' => 'form-label-inline')); }}
                     </td>
                     <td width="100%">
                         {{ Form::input('number', 'price', number_format($priceGroup->price, 2, '.', "'"), array('class' => 'form-control',

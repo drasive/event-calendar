@@ -17,7 +17,7 @@
                     <table class="management">
                         <tr>
                             <td>
-                                {{ Form::label('name', 'Name:', array('class' => 'form-label-inline')); }}
+                                {{ Form::label('name', '*Name:', array('class' => 'form-label-inline')); }}
                             </td>
                             <td width="100%">
                                 {{ Form::text('name', '', array('class' => 'form-control',
@@ -28,7 +28,7 @@
                         </tr>
                         <tr>
                             <td>
-                                {{ Form::label('genre', 'Genre:', array('class' => 'form-label-inline')); }}
+                                {{ Form::label('genre', '*Genre:', array('class' => 'form-label-inline')); }}
                             </td>
                             <td width="100%">
                                 {{ Form::select('genre', $genreList, null, array('class' => 'form-control')); }}
@@ -36,7 +36,7 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                {{ Form::label('description', 'Description:'); }}
+                                {{ Form::label('description', '*Description:'); }}
                                 {{ Form::textarea('description', '', array('class' => 'form-control',
                                   'placeholder' => 'The description of this event.',
                                   'required' => 'required', 'pattern' => '.{12,500}', 'title' => '12 to 500 characters')); }}
@@ -44,7 +44,7 @@
                         </tr>
                         <tr>
                             <td>
-                                {{ Form::label('duration', 'Duration:', array('class' => 'form-label-inline')); }}
+                                {{ Form::label('duration', '*Duration:', array('class' => 'form-label-inline')); }}
                             </td>
                             <td width="100%">
                                 {{ Form::input('time', 'duration', '', array('class' => 'form-control',
@@ -62,7 +62,7 @@
                         </tr>
                         <tr>
                             <td>
-                                {{ Form::label('image', 'Image (max. 2MB):', array('class' => 'form-label-inline')); }}
+                                {{ Form::label('image', 'Image:', array('class' => 'form-label-inline')); }}
                             </td>
                             <td width="100%">
                                 {{ Form::file('image', array('class' => 'form-control',
