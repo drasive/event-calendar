@@ -31,6 +31,10 @@
     height: 100px;
 }
 
+.management label {
+    font-weight: 500;
+}
+
 .form-label-inline {
     margin-top: 3px;
     margin-right: 12px;

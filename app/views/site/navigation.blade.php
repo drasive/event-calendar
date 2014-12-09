@@ -15,8 +15,11 @@
                 <i class="fa fa-user fa-fw"></i> [Username] <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-user">
-                <li><a href="login"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                </li>
+                <li><a href="events">Manage Events</a></li>
+                <li><a href="price-groups">Manage Price Groups</a></li>
+                <li><a href="genres">Manage Genres</a></li>
+                <li><hr /></li>
+                <li><a href="login"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
             </ul>
         </li>
     </ul>
