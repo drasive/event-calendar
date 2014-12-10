@@ -8,19 +8,25 @@
         </button>
         <a class="navbar-brand" href="/">Cultural Institution</a>
     </div>
-
+    
     <ul class="nav navbar-top-links navbar-right">
         <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="fa fa-user fa-fw"></i> [Username] <i class="fa fa-caret-down"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-user">
-                <li><a href="events">Manage Events</a></li>
-                <li><a href="price-groups">Manage Price Groups</a></li>
-                <li><a href="genres">Manage Genres</a></li>
-                <li><hr /></li>
-                <li><a href="login"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
-            </ul>
+            @if ($user == null)
+                <a href="login">Login</a>
+            @else
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-user fa-fw"></i>
+                    {{{ $user->email }}}
+                    <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="events">Manage Events</a></li>
+                    <li><a href="price-groups">Manage Price Groups</a></li>
+                    <li><a href="genres">Manage Genres</a></li>
+                    <li><hr /></li>
+                    <li><a href="logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                </ul
+            @endif
         </li>
     </ul>
 

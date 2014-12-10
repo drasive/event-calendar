@@ -5,6 +5,14 @@
 
 @section('master-content')
     <div class="container">
+        <!-- Notifications -->
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                @include('site.notifications')
+            </div>
+        </div>
+        
+        <!-- Content -->
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">

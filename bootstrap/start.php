@@ -60,6 +60,15 @@ $framework = $app['path.base'].
 require $framework.'/Illuminate/Foundation/start.php';
 
 /*
+| --------------------------------------------------------------------------
+| Additional Setup (custom)
+| --------------------------------------------------------------------------
+*/
+
+// Register composers
+View::composer('site.navigation', 'EventCalendar\NavigationComposer');
+
+/*
 |--------------------------------------------------------------------------
 | Return The Application
 |--------------------------------------------------------------------------

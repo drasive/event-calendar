@@ -4,13 +4,19 @@
     <div id="wrapper">
         <!-- Navigation -->
         @include('site.navigation')
-    
+        
         <div id="page-wrapper">
             <!-- Notifications -->
-            @include('site.notifications')
+            <div class="row">
+                <div class="col-md-12">
+                    @include('site.notifications')
+                </div>
+            </div>
             
             <!-- Content -->
-            @yield('default-content')
+            <div class="row">
+                @yield('default-content')
+            </div>
         </div>
     </div>
 @stop

@@ -10,6 +10,7 @@ Route::get('/archive', 'EventCalendar\ArchiveController@index');
 
 Route::get('/login', 'EventCalendar\LoginController@index');
 Route::post('login/authenticate', 'EventCalendar\LoginController@authenticate');
+Route::get('/logout', 'EventCalendar\LogoutController@index');
 
 Route::group(array('before' => 'auth'), function() {
     Route::get('/events',             'EventCalendar\EventController@index');
