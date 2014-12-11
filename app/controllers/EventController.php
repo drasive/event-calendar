@@ -8,8 +8,9 @@ class EventController extends Controller {
         $events = Event::all();
         
         $events = $events->sortByDesc(function ($event) {
+            // Put events without shows at the beginning
             if ($event->firstShow() === null) {
-                return 999999999999; // Put this event at the beginning
+                return 999999999999;
             }
             
             return strtotime($event->firstShow()->date . ' ' . $event->firstShow()->time);

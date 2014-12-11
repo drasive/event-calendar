@@ -5,7 +5,6 @@ use Controller, View, Input, Paginator;
 class ProgrammeController extends Controller {
     
     public function index()	{
-        // TODO: Is this the correct behaviour?
         // Get events with at least one show
         $events = Event::has('shows')->get();
         
@@ -15,10 +14,10 @@ class ProgrammeController extends Controller {
                 return true;
             }
         });
-         
-         
+        
+        
         // Get genres that are associated with at least one event
-        $genres = Genre::has('events')->get();
+        $genres = Genre::has('events')->orderBy('name')->get();
         
         // Filter out genres that are not associated with any event
         $genres = $genres->filter(function ($genre) use ($events) {
@@ -36,7 +35,7 @@ class ProgrammeController extends Controller {
         
         $eventCountUnfiltered = count($events);
         if (!is_null($selectedGenre)) {
-            // Filter out events with wrong genre
+            // Filter out events with a genre other than the selected one
             $events = $events->filter(function ($event) use ($selectedGenre) {
                 if ($event->genre_id == $selectedGenre->id) {
                     return true;
@@ -44,7 +43,7 @@ class ProgrammeController extends Controller {
             });
         }
         
-        // Sort events chronologically
+        // Sort events chronologically (next event at the beginning)
         $events = $events->sortBy(function ($event) {
             return strtotime($event->firstShow()->date . ' ' . $event->firstShow()->time);
         });

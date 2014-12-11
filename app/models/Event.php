@@ -11,15 +11,15 @@ class Event extends Ardent {
     }
     
     public function priceGroups() {
-        return $this->belongsToMany('EventCalendar\PriceGroup');
+        return $this->belongsToMany('EventCalendar\PriceGroup')->orderBy('name');
     }
     
     public function shows() {
-        return $this->hasMany('EventCalendar\Show');
+        return $this->hasMany('EventCalendar\Show')->orderBy('date');
     }
     
     public function links() {
-        return $this->hasMany('EventCalendar\Link');
+        return $this->hasMany('EventCalendar\Link')->orderBy('name');
     }
     
     // Methods
