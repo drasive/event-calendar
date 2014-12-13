@@ -5,7 +5,7 @@ use Controller, Route, Input, Redirect;
 
 class ApiEventController extends Controller {
     
-    // TODO: Find a way to move the redirects out of the API controllers
+    // TODO: Move anything not related to the API (Messages, Redirections, ..) out of the API controllers
     
     private static $IMAGE_FOLDER = 'public/images/uploads/';
     
@@ -20,6 +20,7 @@ class ApiEventController extends Controller {
         
         // Save models
         $event->save();
+        self::savePriceGroups($event);
         
         $shows = self::buildShows($event);
         self::saveShows($shows, $event);
@@ -45,6 +46,7 @@ class ApiEventController extends Controller {
         
         // Save models
         $event->save();
+        self::savePriceGroups($event);
         
         $shows = self::buildShows($event);
         self::saveShows($shows, $event);
@@ -54,8 +56,10 @@ class ApiEventController extends Controller {
         
         // Save files
         if (Input::hasFile('image')) {
+            // TODO: The new image gets saved with a new file name but the existing image doesn't get deleted
+            // > delete the old file or reuse the file name
             self::saveImage($event->image_path);
-        }        
+        }
         
         // Redirect
         return Redirect::to('events')->with(array('title' => 'Event updated',
@@ -126,6 +130,16 @@ class ApiEventController extends Controller {
         return $links;
     }
     
+    
+    private static function savePriceGroups($event) {
+        // TODO: __Implement saving the selection
+        
+        $priceGroups = Input::get('price-group');
+        //dd($priceGroups);
+        foreach ($priceGroups as $index => $priceGroup) {
+            
+        }
+    }
     
     private static function saveImage($fileName) {
         if ($fileName == null) {

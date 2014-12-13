@@ -61,6 +61,11 @@
                             </td>
                         </tr>
                         <tr>
+                            <td colspan="2">
+                                @include('shared.price-group-selection')
+                            </td>
+                        </tr>
+                        <tr>
                             <td>
                                 {{ Form::label('image', 'Image:', array('class' => 'form-label-inline')); }}
                             </td>
