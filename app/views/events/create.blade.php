@@ -22,7 +22,7 @@
                             <td width="100%">
                                 {{ Form::text('name', '', array('class' => 'form-control',
                                   'placeholder' => 'The appellation of this event. E.g.: Christmas concert',
-                                  'required' => 'required', 'pattern' => '.{2,150}', 'title' => '2 to 150 characters',
+                                  'required' => 'required', 'pattern' => '.{2,150}', 'maxlength' => '150', 'title' => '2 to 150 characters',
                                   'autofocus' => 'autofocus')); }}
                             </td>
                         </tr>
@@ -39,7 +39,7 @@
                                 {{ Form::label('description', '*Description:'); }}
                                 {{ Form::textarea('description', '', array('class' => 'form-control',
                                   'placeholder' => 'The description of this event.',
-                                  'required' => 'required', 'pattern' => '.{12,500}', 'title' => '12 to 500 characters')); }}
+                                  'required' => 'required', 'pattern' => '.{12,500}', 'maxlength' => '500', 'title' => '12 to 500 characters')); }}
                             </td>
                         </tr>
                         <tr>
@@ -49,7 +49,7 @@
                             <td width="100%">
                                 {{ Form::input('time', 'duration', '', array('class' => 'form-control',
                                   'placeholder' => 'The duration of each show of this event. E.g.: 02:30 (2 hours and 30 minutes)',
-                                  'required' => 'required', 'title' => '00:00 to 23:59')); }}
+                                  'required' => 'required', 'title' => '00:00 to 23:59', 'maxlength' => '5')); }}
                             </td>
                         </tr>
                         <tr>
@@ -57,7 +57,7 @@
                                 {{ Form::label('cast', 'Cast:'); }}
                                 {{ Form::textarea('cast', '', array('class' => 'form-control',
                                   'placeholder' => 'The cast for this event.',
-                                  'pattern' => '.{0,500}', 'title' => 'Maximum 500 characters')); }}
+                                  'pattern' => '.{0,500}', 'maxlength' => '500', 'title' => 'Maximum 500 characters')); }}
                             </td>
                         </tr>
                         <tr>
@@ -75,7 +75,7 @@
                                 {{ Form::label('image-description', 'Image description:'); }}
                                 {{ Form::textarea('image-description', '', array('class' => 'form-control',
                                   'placeholder' => 'The description of the selected image.',
-                                  'pattern' => '.{0,250}', 'title' => 'Maximum 250 characters')); }}
+                                  'pattern' => '.{0,250}', 'maxlength' => '250', 'title' => 'Maximum 250 characters')); }}
                             </td>
                         </tr>
                     </table>

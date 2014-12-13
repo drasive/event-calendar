@@ -13,7 +13,7 @@
                     <td width="100%">
                         {{ Form::text('name', $priceGroup->name, array('class' => 'form-control',
                           'placeholder' => 'The type of people that belong in this price group. E.g.: Children.',
-                          'required' => 'required', 'pattern' => '.{2,35}', 'title' => '2 to 35 characters')); }}
+                          'required' => 'required', 'pattern' => '.{2,35}', 'maxlength' => '35', 'title' => '2 to 35 characters')); }}
                     </td>
                 </tr>
                 <tr>

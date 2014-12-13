@@ -13,7 +13,7 @@
                     <td width="100%">
                         {{ Form::text('name', '', array('class' => 'form-control',
                           'placeholder' => 'The appellation of this genre. E.g.: Concert',
-                          'required' => 'required', 'pattern' => '.{2,50}', 'title' => '2 to 50 characters',
+                          'required' => 'required', 'pattern' => '.{2,50}', 'maxlength' => '50', 'title' => '2 to 50 characters',
                           'autofocus' => 'autofocus')); }}
                     </td>
                 </tr>

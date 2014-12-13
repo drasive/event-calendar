@@ -22,7 +22,7 @@
                             <td width="100%">
                                 {{ Form::text('name', $event->name, array('class' => 'form-control',
                                   'placeholder' => 'The appellation of this event. E.g.: Christmas concert',
-                                  'required' => 'required', 'pattern' => '.{2,150}', 'title' => '2 to 150 characters',
+                                  'required' => 'required', 'pattern' => '.{2,150}', 'maxlength' => '150', 'title' => '2 to 150 characters',
                                   'autofocus' => 'autofocus')); }}
                             </td>
                         </tr>
@@ -39,7 +39,7 @@
                                 {{ Form::label('description', '*Description:'); }}
                                 {{ Form::textarea('description', $event->description, array('class' => 'form-control',
                                   'placeholder' => 'The description of this event.',
-                                  'required' => 'required', 'pattern' => '.{12,500}', 'title' => '12 to 500 characters')); }}
+                                  'required' => 'required', 'pattern' => '.{12,500}', 'maxlength' => '500', 'title' => '12 to 500 characters')); }}
                             </td>
                         </tr>
                         <tr>
@@ -49,7 +49,7 @@
                             <td width="100%">
                                 {{ Form::input('time', 'duration', $event->duration, array('class' => 'form-control',
                                   'placeholder' => 'The duration of each show of this event. E.g.: 02:30 (2 hours and 30 minutes)',
-                                  'required' => 'required', 'title' => '00:00 to 23:59')); }}
+                                  'required' => 'required', 'maxlength' => '5', 'title' => '00:00 to 23:59')); }}
                             </td>
                         </tr>
                         <tr>
@@ -57,7 +57,7 @@
                                 {{ Form::label('cast', 'Cast:'); }}
                                 {{ Form::textarea('cast', $event->cast, array('class' => 'form-control',
                                   'placeholder' => 'The cast for this event.',
-                                  'pattern' => '.{0,500}', 'title' => 'Maximum 500 characters')); }}
+                                  'pattern' => '.{0,500}', 'maxlength' => '500', 'title' => 'Maximum 500 characters')); }}
                             </td>
                         </tr>
                         <tr>
@@ -75,7 +75,7 @@
                                 {{ Form::label('image-description', 'Image description:'); }}
                                 {{ Form::textarea('image-description', $event->image_description, array('class' => 'form-control',
                                   'placeholder' => 'The description of the selected image.',
-                                  'pattern' => '.{0,250}', 'title' => 'Maximum 250 characters')); }}
+                                  'pattern' => '.{0,250}', 'maxlength' => '250', 'title' => 'Maximum 250 characters')); }}
                             </td>
                         </tr>
                     </table>
@@ -95,13 +95,13 @@
                                         <input name="show-date[]" type="date" class="form-control"
                                           value="{{ $show->date }}"
                                           placeholder="The date of the show. E.g.: 15.03.2015"
-                                          required="required" title="A valid date in the format DD.MM.YYYY">
+                                          required="required" maxlength="10" title="A valid date in the format DD.MM.YYYY">
                                     </td>
                                     <td width="50%">
                                         <input name="show-time[]" type="time" class="form-control"
                                           value="{{ $show->time }}"
                                           placeholder="The time the show starts at. E.g.: 21:30"
-                                          required="required" title="00:00 to 23:59">
+                                          required="required" maxlength="5" title="00:00 to 23:59">
                                     </td>
                                     <td>
                                         <a class="delete-show" title="Delete this show">
@@ -130,13 +130,13 @@
                                         <input name="link-url[]" type="url" class="form-control"
                                           value="{{ $link->url }}"
                                           placeholder="The URL of the link. E.g.: http://www.gibm.ch"
-                                          required="required" pattern=".{5,255}" title="A valid URL">
+                                          required="required" pattern=".{5,255}" maxlength="255" title="A valid URL">
                                     </td>
                                     <td width="30%">
                                         <input name="link-name[]" type="text" class="form-control"
                                           value="{{ $link->name }}"
                                           placeholder="The name of the link. E.g.: www.gibm.ch"
-                                          pattern=".{0,50}" title="Maximum 50 characters">
+                                          pattern=".{0,50}" maxlength="50" title="Maximum 50 characters">
                                     </td>
                                     <td>
                                         <a class="delete-link" title="Delete this link">

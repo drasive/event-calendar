@@ -13,7 +13,7 @@
                     <td width="100%">
                         {{ Form::text('name', '', array('class' => 'form-control',
                           'placeholder' => 'The type of people that belong in this price group. E.g.: Children.',
-                          'required' => 'required', 'pattern' => '.{2,35}', 'title' => '2 to 35 characters')); }}
+                          'required' => 'required', 'pattern' => '.{2,35}', 'maxlength' => '35', 'title' => '2 to 35 characters',
                     </td>
                 </tr>
                 <tr>
@@ -23,8 +23,8 @@
                     <td width="100%">
                         {{ Form::input('number', 'price', '', array('class' => 'form-control',
                           'placeholder' => 'The admission charge for this group of people. E.g.: 19,95',
-                          'min' => '0', 'max' => '999999,99', 'step' => '0.05',
                           'autofocus' => 'autofocus')); }}
+                          'min' => '0', 'max' => '999999,99', 'step' => '0.05')); }}
                     </td>
                 </tr>
             </tbody>
