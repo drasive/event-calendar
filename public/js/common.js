@@ -25,9 +25,10 @@ function focusInput(element) {
     element.focus();
     
     // Puts the cursor at the end of the content
-    var content = element.val();
-    element.val('');
-    element.val(content);
+    // TODO: Disabled temporarily because it sometimes deletes the content
+    //var content = element.val();
+    //element.val('');
+    //element.val(content);
 }
 
 // HTTP parameters
