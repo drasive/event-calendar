@@ -16,7 +16,7 @@
 <div class="alert alert-danger alert-block">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <h4>Form errors</h4>
-    Please check the form below for the following errors:
+    Please check the form below (dialog may needs to be opened again) for the following errors:
     <ul>
         @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
