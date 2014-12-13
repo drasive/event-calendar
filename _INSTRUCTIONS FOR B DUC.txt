@@ -1,0 +1,26 @@
+# Instructions
+Gerichtet an: B. Duc
+
+## General
+- Das Projekt wurde unter Verwendung des PHP Frameworks [Laravel](http://laravel.com/) 
+erstellt und ist davon abhängig
+- Einige Bereiche der Website (z.B. das Management von Event Shows/ Links)
+benötigen JavaScript um zu korrekt funktionieren
+
+## Setup
+### Dependencies
+You need to have [Composer](https://getcomposer.org/) installed on your machine
+in order to install the required dependencies.
+After you have installed Composer, run ```composer install``` in the project
+directory.
+
+### Database
+Execute the following scripts on your local MySQL server:
+- app/database/create-database.sql
+- app/database/create-users.sql
+- app/database/insert-test-data.sql (optional)
+
+### Webserver
+You can start a local webserver by running ```php artisan serve```
+in the project directory.
+Then use your webbrowser to navigate to ```localhost:8000```.
