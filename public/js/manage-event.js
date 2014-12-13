@@ -51,6 +51,8 @@ function deleteShowRow(sender) {
 
 
 function updateShowDeleteHandlers() {
+    $('.delete-show').off('click');
+    
     $('.delete-show').on('click', function () {
         deleteShowRow($(this));
     });
@@ -109,6 +111,8 @@ function deleteLinkRow(sender) {
 
 
 function updateLinkDeleteHandlers() {
+    $('.delete-link').off('click');
+    
     $('.delete-link').on('click', function () {
         deleteLinkRow($(this));
     });
