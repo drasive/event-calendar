@@ -1,9 +1,6 @@
-- Verwaltung von event-price groups
-- Noscript Warnung
-- Benutzeranleitung fertigstellen
-    - Screenshots
-    - Verwaltung von event-price groups
-    - Nur Veranstaltungen mit Vorstellungen werden angezeigt
+- Instructions for teacher > Create
+- Verwaltung von event-price groups > Speicherung von Auswahl
+- Description clientside validation > Make 1 char valid
+- Entity with this name already exists validation > Implement
 
-- Thumbnail generieren
-- Alerts in Verwaltungsmodals anzeigen, nicht auf der Elternseite
+- Thumbnail Verwendung
