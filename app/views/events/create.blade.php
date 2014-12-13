@@ -65,9 +65,11 @@
                                 {{ Form::label('image', 'Image:', array('class' => 'form-label-inline')); }}
                             </td>
                             <td width="100%">
-                                {{ Form::file('image', array('class' => 'form-control',
+                                {{ Form::file('image', array('class' => 'form-control inline-block',
                                   'placeholder' => 'The image for this event.',
-                                  'accept' => 'image/*')); }}
+                                  'accept' => 'image/*',
+                                  'style' => 'width: 65%;')); }}
+                                <span>max. 2MB, .jpg/.png/.gif</span>
                             </td>
                         </tr>
                         <tr>

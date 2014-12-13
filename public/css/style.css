@@ -86,7 +86,7 @@ h4 + .title-addition {
 /* Helpers
 ***************************/
 .inline-block {
-    display: inline-block;
+    display: inline-block !important;
 }
 
 .right-align {
