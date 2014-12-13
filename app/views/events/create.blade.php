@@ -35,14 +35,6 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2">
-                                {{ Form::label('description', '*Description:'); }}
-                                {{ Form::textarea('description', '', array('class' => 'form-control',
-                                  'placeholder' => 'The description of this event.',
-                                  'required' => 'required', 'pattern' => '.{12,500}', 'maxlength' => '500', 'title' => '12 to 500 characters')); }}
-                            </td>
-                        </tr>
-                        <tr>
                             <td>
                                 {{ Form::label('duration', '*Duration:', array('class' => 'form-label-inline')); }}
                             </td>
@@ -50,6 +42,14 @@
                                 {{ Form::input('time', 'duration', '', array('class' => 'form-control',
                                   'placeholder' => 'The duration of each show of this event. E.g.: 02:30 (2 hours and 30 minutes)',
                                   'required' => 'required', 'title' => '00:00 to 23:59', 'maxlength' => '5')); }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                {{ Form::label('description', 'Description:'); }}
+                                {{ Form::textarea('description', '', array('class' => 'form-control',
+                                  'placeholder' => 'The description of this event.',
+                                  'required' => 'required', 'maxlength' => '500', 'title' => '12 to 500 characters')); }}
                             </td>
                         </tr>
                         <tr>

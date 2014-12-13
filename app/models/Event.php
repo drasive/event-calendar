@@ -34,7 +34,7 @@ class Event extends Ardent {
             ),
             array(
                 'name' =>              'required|between:2,150',
-                'description' =>       'required|between:12,500',
+                'description' =>       'required|between:0,500',
                 'duration' =>    array('required', 'regex:/^([01]?[0-9]|2[0-3]):([0-5][0-9])$/'),
                 'cast' =>              'between:0,500',
                 'image_description' => 'between:0,250'

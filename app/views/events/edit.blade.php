@@ -22,7 +22,7 @@
                             <td width="100%">
                                 {{ Form::text('name', $event->name, array('class' => 'form-control',
                                   'placeholder' => 'The appellation of this event. E.g.: Christmas concert',
-                                  'required' => 'required', 'pattern' => '.{2,150}', 'maxlength' => '150', 'title' => '2 to 150 characters',
+                                  'required' => 'required', 'maxlength' => '150', 'title' => '2 to 150 characters',
                                   'autofocus' => 'autofocus')); }}
                             </td>
                         </tr>
@@ -35,14 +35,6 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2">
-                                {{ Form::label('description', '*Description:'); }}
-                                {{ Form::textarea('description', $event->description, array('class' => 'form-control',
-                                  'placeholder' => 'The description of this event.',
-                                  'required' => 'required', 'pattern' => '.{12,500}', 'maxlength' => '500', 'title' => '12 to 500 characters')); }}
-                            </td>
-                        </tr>
-                        <tr>
                             <td>
                                 {{ Form::label('duration', '*Duration:', array('class' => 'form-label-inline')); }}
                             </td>
@@ -50,6 +42,14 @@
                                 {{ Form::input('time', 'duration', $event->duration, array('class' => 'form-control',
                                   'placeholder' => 'The duration of each show of this event. E.g.: 02:30 (2 hours and 30 minutes)',
                                   'required' => 'required', 'maxlength' => '5', 'title' => '00:00 to 23:59')); }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                {{ Form::label('description', 'Description:'); }}
+                                {{ Form::textarea('description', $event->description, array('class' => 'form-control',
+                                  'placeholder' => 'The description of this event.',
+                                  'required' => 'required', 'pattern' => '.{12,500}', 'maxlength' => '500', 'title' => '12 to 500 characters')); }}
                             </td>
                         </tr>
                         <tr>
