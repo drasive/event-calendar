@@ -2,7 +2,7 @@
     <div class="price-group-selection" role="group">
         Price Groups:
         @foreach ($priceGroups as $index => $priceGroup)
-            <input type="checkbox" name="price-group[]" id="pg{{ $priceGroup->id }}"
+            <input type="checkbox" name="price-group[]" value="{{ $priceGroup->id }}"
               @if (in_array($priceGroup->id, $priceGroupsUsed))
                   checked="checked"
               @endif

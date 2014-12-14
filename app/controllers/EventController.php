@@ -25,7 +25,7 @@ class EventController extends Controller {
     public function create() {
         $genreList = Genre::lists('name', 'id');
         $priceGroups = PriceGroup::all();
-        $priceGroupsUsed = array();
+        $priceGroupsUsed = $priceGroups->lists('id'); // Check all price groups by default
         
         return View::make('events.create', array(
           'genreList' => $genreList,

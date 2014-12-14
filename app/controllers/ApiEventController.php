@@ -204,13 +204,23 @@ class ApiEventController extends Controller {
     }
     
     
+    // TODO: Improve method to save price groups
     private static function savePriceGroups($event) {
-        // TODO: __Implement saving the selection
+        // This method requires to a lot of unnecessary database access and
+        // makes the timestamps useless, but is faster to implement than
+        // a more robust and better performing solution.
         
-        $priceGroups = Input::get('price-group');
-        //dd($priceGroups);
-        foreach ($priceGroups as $index => $priceGroup) {
-            
+        $priceGroupIds = Input::get('price-group');
+        if ($priceGroupIds !== null) {
+            \DB::transaction(function() use ($priceGroupIds, $event) {
+                // Remove all assigned price groups
+                $event->priceGroups()->detach();
+                
+                // Assign all selected price groups 
+                foreach ($priceGroupIds as $priceGroupId) {
+                    $event->priceGroups()->attach($priceGroupId);
+                }
+            });
         }
     }
     
@@ -244,7 +254,7 @@ class ApiEventController extends Controller {
     private static function saveShows($shows, $event) {
         // This method requires to a lot of unnecessary database access and
         // makes the timestamps useless, but is faster to implement than
-        // a more robust and performance oriented solution.
+        // a more robust and better performing solution.
         
         \DB::transaction(function() use ($shows, $event) {
             // Delete all existing shows
@@ -261,7 +271,7 @@ class ApiEventController extends Controller {
     private static function saveLinks($links, $event) {
         // This method requires to a lot of unnecessary database access and
         // makes the timestamps useless, but is faster to implement than
-        // a more robust and performance oriented solution.
+        // a more robust and better performing solution.
         
         \DB::transaction(function() use ($links, $event) {
             // Delete all existing links

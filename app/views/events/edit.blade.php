@@ -74,7 +74,7 @@
                                   'placeholder' => 'The image for this event.',
                                   'accept' => 'image/*',
                                   'style' => 'width: 65%;')); }}
-                                <span>max. 2MB, .jpg/.png/.gif</span>
+                                <span>max. 10MB, .jpg/.png/.gif</span>
                             </td>
                         </tr>
                         <tr>
