@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS `eventcalendar`.`events` (
   `description` VARCHAR(500) NULL,
   `cast` VARCHAR(500) NULL,
   `image_path` VARCHAR(260) NULL,
+  `image_thumbnail_path` VARCHAR(260) NULL,
   `image_description` VARCHAR(250) NULL,
   `created_at` DATETIME NOT NULL,
   `updated_at` DATETIME NULL,

@@ -38,7 +38,7 @@
             <div class="text-center col-sm-5 col-md-4">
                 <a class="fancybox event-image" href="images/uploads/{{ $event->image_path }}"
                   title="{{{ $event->name }}}">
-                    <img src="images/uploads/{{ $event->image_path }}" />
+                    <img src="images/uploads/{{ $event->image_thumbnail_path }}" />
                 </a>
                 
                 <p>{{{ $event->image_description }}}</p>
