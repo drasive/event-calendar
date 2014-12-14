@@ -24,7 +24,7 @@
             <p>
                 @foreach ($event->links as $index => $link)
                     <a href="{{{ $link->url }}}" target="_blank">
-                        @if ($link->name !== null)
+                        @if ($link->name !== null && $link->name !== '')
                             {{{ $link->name }}}
                         @else
                             {{{ $link->url }}}

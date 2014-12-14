@@ -6,7 +6,7 @@
               @if (in_array($priceGroup->id, $priceGroupsUsed))
                   checked="checked"
               @endif
-              >&nbsp;{{ $priceGroup->name }}</input>&nbsp;&nbsp;
+              >&nbsp;{{{ $priceGroup->name }}} (Fr. {{{ $priceGroup->price }}})</input>&nbsp;&nbsp;
         @endforeach
     </div>
 @endif

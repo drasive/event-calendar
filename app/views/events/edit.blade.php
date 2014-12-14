@@ -46,10 +46,10 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                {{ Form::label('description', 'Description:'); }}
+                                {{ Form::label('description', '*Description:'); }}
                                 {{ Form::textarea('description', $event->description, array('class' => 'form-control',
                                   'placeholder' => 'The description of this event.',
-                                  'required' => 'required', 'pattern' => '.{12,500}', 'maxlength' => '500', 'title' => '12 to 500 characters')); }}
+                                  'required' => 'required', 'maxlength' => '500', 'title' => '1 to 500 characters')); }}
                             </td>
                         </tr>
                         <tr>
