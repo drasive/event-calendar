@@ -44,7 +44,7 @@ class ArchiveController extends Controller {
         }
         
         // Sort events chronologically (most recent event at the beginning)
-        $events = $events->sortBy(function ($event) {
+        $events = $events->sortByDesc(function ($event) {
             return strtotime($event->firstShow()->date . ' ' . $event->firstShow()->time);
         });
         
