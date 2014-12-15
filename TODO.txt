@@ -1,6 +1,8 @@
-- Instructions for teacher > Create
-- Verwaltung von event-price groups > Speicherung von Auswahl
-- Description clientside validation > Make 1 char valid
-- Entity with this name already exists validation > Implement
+- Genre filter all redirects to programme
+- Event without price groups etc
 
-- Thumbnail Verwendung
+- Create more test data
+- Application testing
+- Instructions for teacher > Extend, Update
+
+- Entity with this name already exists validation > Implement
