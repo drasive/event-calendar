@@ -1,8 +1,4 @@
-- Genre filter all redirects to programme
-- Event without price groups etc
+- Paging resets the genre filter
 
-- Create more test data
 - Application testing
 - Instructions for teacher > Extend, Update
-
-- Entity with this name already exists validation > Implement
