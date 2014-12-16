@@ -6,7 +6,7 @@
                 @if (!is_null($event->description) && $event->description !== '')
                     {{{ $event->description }}}
                 @else
-                    This event has no description
+                    This event has no description.
                 @endif
             </p>
             <p class="event-cast">
