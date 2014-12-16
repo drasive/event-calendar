@@ -21,7 +21,7 @@
                         {{ Form::label('price', '*Price:', array('class' => 'form-label-inline')); }}
                     </td>
                     <td width="100%">
-                        {{ Form::input('number', 'price', number_format($priceGroup->price, 2, '.', "'"), array('class' => 'form-control',
+                        {{ Form::input('number', 'price', $priceGroup->price, array('class' => 'form-control',
                           'placeholder' => 'The admission charge for this group of people. E.g.: 19,95',
                           'min' => '0', 'max' => '999999,99', 'step' => '0.05',
                           'autofocus' => 'autofocus')); }}
