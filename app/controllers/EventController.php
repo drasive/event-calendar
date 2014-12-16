@@ -18,8 +18,12 @@ class EventController extends Controller {
             return strtotime($event->firstShow()->date . ' ' . $event->firstShow()->time);
         });
         
+        // Get genres count
+        $genres = Genre::all();
+        
         return View::make('events', array(
-          'events' => $events));
+          'events' => $events,
+          'genres' => $genres));
     }
     
     public function create() {

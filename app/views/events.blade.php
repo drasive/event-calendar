@@ -16,9 +16,14 @@
             <p>
                 There are no events yet.<br />
                 <br />
-                <a class="btn btn-success" data-backdrop="static"
-                  href="events/create" data-toggle="modal" data-target="#createModal">
-                  Create Event</a>
+                @if (count($genres) === 0)
+                    There needs to be at least one genre in order to create an event.<br />
+                    <a class="btn btn-success" href="genres">Manage Genres</a>
+                @else
+                    <a class="btn btn-success" data-backdrop="static"
+                      href="events/create" data-toggle="modal" data-target="#createModal">
+                      Create Event</a>
+                @endif
             </p>
             @else
                 <div class="table-responsive">
