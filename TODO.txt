@@ -1,4 +1,0 @@
-- Paging resets the genre filter
-
-- Application testing
-- Instructions for teacher > Extend, Update
